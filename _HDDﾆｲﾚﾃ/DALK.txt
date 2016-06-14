@@ -1,0 +1,106 @@
+﻿－－－－－DALK=Digital Advanced Library & Knowledges－－－－－
+・渡澄萌衣が趣味でメンテしている（おもにWindows美少女）2Dゲーム向けライブラリ。
+・どちらかというと、Win32にiOSやAndroidを寄せた感じのキメラになってます。
+・個人でほそぼそやってきたので、もっとできのいいのはいっぱいあるヨ。
+　（そもそももうスクラッチでこの手のものを作る必要すらない世の中ｗ）
+・VS2013/VS2015/XCode7でビルド。
+・ライセンスはMIT
+
+
+■（黒）歴史
+　Ver1.0　「あそび塾」で使った。当時はGDKという安直な名前。このときはXPが出たくらいだったのでCPU描画+αブレンドだけMMX。
+　Ver2.0　しばらくコード書かない仕事してる時にいい加減作り直したくなったので、一から設計見直し＆DirectX9対応。
+　Ver3.0=DALK1.0　某魔法探偵社時代にiOSにコンソールタイトルを移植してくれと言われたのでその時のノウハウを元にOpenGLやOpenAL対応。
+
+
+■ライブラリ群
+・美少女ゲームらしくジャンヌ＝ダルクからネーミングを取った……はずもなく。
+・リメイクか続編出してくれませんかねアリスソフトさん。
+・DirectMusic,DirectSound,DirectInputは今のところ非公開。
+・FontやDIBSection等Windowsレガシーなものは非推奨＆メンテしてません。
+・PS3等コンソール開発用の残骸が残っていますがもろちん（誤植）サポート外です。そのうち削除します。
+
+
+
+・基本的なDefineはDalkConfig.hを参照。
+　_DALK_WINDOWS_
+　_DALK_IOS_
+　_DALK_ANDROID_
+　のいずれかでプラットフォーム設定
+
+　_DALK_USE_DIRECT3D_
+　_DALK_USE_OPENGL_
+　のいずれかで3D描画選択
+
+　_DALK_USE_XAUDIO_
+　_DALK_USE_OPENAL_
+　のいずれかでサウンドエンジンの選択。
+
+　開発中ですが
+　_DALK_USE_SQUIRREL_
+　でSquirrelに一部クラスをバインド出来る予定です。
+　（Squirrel必須）
+
+
+
+・メイン
+External/	デフォルトでの外部ライブラリ参照フォルダ。
+
+DALK/
+　　Siglune/	シグルーン：DirectX/OpenGL共通初期化・デバイスコアライブラリ
+　　Ellison/	エリスン：DirectX/OpenGL共通ユーティリティライブラリ（テクスチャ・頂点バッファ・シェーダ）
+　　Rimlia/	リムリア：ファイルIO・サウンド＆画像デコーダー等、基幹ライブラリ(iOS/Windows共通)
+　　Rinse/		リンス：XAudio2/OpenAL共通コンポーネント
+　　Miko/		ミコ：XInputライブラリ（開発中）
+　　Supplement/
+　　　　Sail/セイル：キューバッファ、ユーザーイベント、アーカイバ等の汎用ユーテリティ（整理・開発中）
+　　　　Mira/ミラ：PDF台本化＆csv吐き出しツール（主にローカライズが必要なコンソール向け）（開発中）
+　　　　　　　　　JokerScriptを切り出してリファクタリングしたもの。
+　　　　　　　　　元々はC#用KAGEXパーサ・実行エンジンとして作っているものです。。
+　　　　libTLG：TLGローダ（吉里吉里のソースを加工したもの・Cのみなので現状遅い）
+
+・未定義
+　Aline/アリーヌ（ありーぬ）	
+　Silvia/シルヴィア（しるう゛ぃあ）
+　Tirol/ティロル（てぃろる）
+　Chorula/チョルラ（ちょるら）
+　Ziema/ジーマ（じーま）
+　Rue/ルー（るー）
+　Farola/ファローラ（ふぁろーら）
+　Alpina/アルピナ（あるぴな）
+　Kuh/クウ（くう）
+
+■外部ライブラリ
+○必須
+・babel（日本語文字コード変換）	→文字列周りがキモくなりすぎた感。
+
+○Optional
+・EASTL（STLと切り替え）
+・LZMA（圧縮）/　ラッパーのみ。必須では無い
+・RLE
+・glm(OpenGL Mathmatics)/D3DX(3D)/Eigen（行列計算）→Ellison、Siglune
+・libogg(OGG)	→Rimlia
+・libvoribis(OGG)	→Rimlia
+・libpng(PNG)	→Rimlia
+・zlib(PNG)	→Rimlia
+・squish(DDS)	→Rimlia
+・freetype	→Rimlia
+・bmfont	→Rimlia
+・Squirrel&Sqrat（クラス全般をバインド作業中）
+・libharu(PDF)	→Mira
+
+■ToDo:
+・テクスチャフォント周り設計見直し(Rimlia）
+・サウンドのストリーミング対応（StreamingManagerとして独立させた方がいいかな）　Rinse
+・WMA/mp3対応（WindowsMediaFoudation）　Rimlia
+・Opus対応（libOpus）　Rimlia
+・動画周り（WindowsMediaFoudation）　Rimlia/Ellison
+・の仮想パッド入力/入力アクションの抽象化（Miko/Sail)
+
+
+
+
+■Author
+渡澄萌衣（わたすみめい）
+saya.swatty@gmail.com
+twitter:mahiru_hiroba

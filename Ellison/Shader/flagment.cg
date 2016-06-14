@@ -1,0 +1,21 @@
+//フラグメントの入力
+struct FragmentIn
+{
+        float4 position : POSITION; //ラスタライズ用(使用しない)
+        float3 color : COLOR;
+};
+
+//フラグメントの出力
+struct FragmentOut
+{
+        float3 color : COLOR;
+};
+
+//--------- フラグメントシェーダメイン関数 ------------//
+FragmentOut main(in FragmentIn input)
+{
+        FragmentOut output;//フラグメント出力
+        output.color = input.color;
+
+        return output;
+}
