@@ -33,6 +33,8 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstanc
 	_Dalk.Init(1280, 720);
 	_Dalk.Run();
 	_Dalk.ShutDown();
+
+	return _Dalk.Result();
 }
 
 #if 0

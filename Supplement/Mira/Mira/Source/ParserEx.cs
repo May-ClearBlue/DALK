@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -16,21 +16,20 @@ namespace NovelEx {
 		private string name = "";
 		private string original = "";
 		private Dictionary<string,string> dicParam = new Dictionary<string,string>();
+
+		public string originalText { get {  return original; } }
+		public Dictionary<string, string> paramDictionary { get { return dicParam;} }
+
 		//パラメータを保持する
 		public Tag (string str)
 		{
-
 			this.original = str;
 		
 			str = str.Replace ("[", "").Replace ("]", "");
 
-			//storage = 3 name=4 param=5 みたいな文字列が渡ってくる
-			//name storage = 4
-			//bool flag_start_tag = false;
+			//storage=3 name=4 param=5 みたいな文字列が渡ってくる
 			bool flag_finish_tag = false;
-
 			string tag_name = "";
-
 			int end_tag_index = 0;
 
 			for (int i = 0; i < str.Length; i++) {
@@ -46,7 +45,6 @@ namespace NovelEx {
 					tag_name += c;
 					continue;
 				}
-
 			}
 
 			if (this.name == "") {
@@ -54,9 +52,7 @@ namespace NovelEx {
 				flag_finish_tag = true;
 			}
 
-
 			if (!flag_finish_tag) {
-
 				//ここまでで、タグ解析完了
 				string param_str = str.Substring (end_tag_index).Trim();
 
@@ -68,7 +64,6 @@ namespace NovelEx {
 				string val = "";
 
 				for (int i = 0; i < param_str.Length; i++) {
-
 					string c = param_str [i].ToString();
 
 					//イコール前の空白は無視
@@ -110,11 +105,7 @@ namespace NovelEx {
 								this.dicParam [key] = val;
 								key = "";
 								val = "";
-
-
 							}
-
-
 						} else {
 
 							if (c == " " && flag_qt == false) {
@@ -136,25 +127,16 @@ namespace NovelEx {
 								//最後の文字の場合
 								this.dicParam [key] = val;
 							}
-					
-
 						}
-				
 					}
-
 				}
-
-				/*
+			/*
 			foreach(string t in this.dicParam.Keys)
 			{
 				Debug.Log(t +"="+ this.dicParam[t]);
 			}
 			*/
-
-
 			}
-
-
 		}
 
 		public string Original {
@@ -178,7 +160,6 @@ namespace NovelEx {
 			} else {
 				return null;
 			}
-
 		}
 
 		public Dictionary<string,string> getParamByDictionary()
@@ -193,18 +174,17 @@ namespace NovelEx {
 
 		}
 	}
-	//スクリプトファイルを読み込んで、適切な形にパースして返します
-	/*
 
+//スクリプトファイルを読み込んで、適切な形にパースして返します
+/*
 *start
-
 [cm  ]test [l][r]
 [back  storage="room.jpg"  time="5000"  ]
-
 */
+
 	public class NovelParser {
-		public string errorMessage = "";
-		public string warningMessage = "";
+//		public string errorMessage = "";
+//		public string warningMessage = "";
 
 		private System.Globalization.TextInfo tf = new System.Globalization.CultureInfo ("en-US", false).TextInfo;
 
@@ -214,14 +194,28 @@ namespace NovelEx {
 			this.classPrerix = classPrefix;
 		}
 
+		private ErrorManager 	errorManager;
+
+//		private bool ignoreCR = true;
+//		private string talkNameTag = "talk_name";
+		private string nameTagLeft = "【";
+		private string nameTagRight = "】";
+		private string scenarioFile = "";
+		private List<Tag> _tagList = new List<Tag>();
+
+		public List<Tag> tagList { get { return _tagList; } }
+
+		public void Init()
+		{
+			tagList.Clear();
+		}
+
 		//コンフィグファイルを読み込んで返す
 		public Dictionary<string,string> parseConfig (string config_text)
 		{
-
 			Dictionary<string,string> dicConfig = new Dictionary<string,string>(); //コンフィグ
 
 			string[] lines = config_text.Split ('\n');
-
 
 			//lines の前に、一文字ずつ解析してすべての要素を分解する必要がある
 			for (int i = 0; i < lines.Length; i++) {
@@ -240,11 +234,7 @@ namespace NovelEx {
 
 				string key = arrayVal [0].Trim();
 				string val = arrayVal [1].Trim();
-
-
 				dicConfig [key] = val;
-
-
 			}
 
 			return dicConfig;
@@ -270,19 +260,24 @@ namespace NovelEx {
 
 		public bool parsePreproseccor(string lineText) {
 			switch (lineText) {
-			case "#SetignoreCR":
-				JOKEREX.Instance.SystemConfig.ignoreCR = true;
-				break;
-			case "#ResetignoreCR":
-				JOKEREX.Instance.SystemConfig.ignoreCR = false;
-				break;
+//			case "#SetignoreCR":
+//				ignoreCR = true;
+//				break;
+//			case "#ResetignoreCR":
+//				ignoreCR = false;
+//				break;
 			default:
 				return false;
 			}
-			return true;
+//			return true;
 		}
 
-		public List<AbstractComponent> parseScript (string script_text) {
+		public List<AbstractComponent> parseScript (string script_text, string fileName = null) {
+			if( !string.IsNullOrEmpty(fileName))
+			{
+				scenarioFile = Path.GetFileName(fileName);
+			}
+
 			//GameManager gameManager = NovelSingleton.GameManager;
 			List<AbstractComponent> components = new List<AbstractComponent>();
 			string[] lines = script_text.Split ('\n');
@@ -302,12 +297,11 @@ namespace NovelEx {
 
 				line = line.Replace ("\r", "").Replace ("\n", "");
 
-				//Debug.Log (line);
-
 				if(line == "")
 					continue;
 
 				string firstChar = line[0].ToString();
+
 
 				//コメント開始
 				if(line.IndexOf ("/*") != -1)
@@ -321,11 +315,15 @@ namespace NovelEx {
 				if(isCommentNow == true)
 					continue;
 
-				// ;で始まってたらコメントなので無視する
-				if (firstChar == ";")
+				// "//"はコメント（解析されない）
+				if(line[0].ToString() == "/" && line[1].ToString() == "/")
 					continue;
 
 				line = line.Replace("|", "\r\n");
+				
+				// ";"はコメントタグ
+				if (firstChar == ";")
+					line = "[comment text =\""+line+"\"]";
 
 				//ラベルを表します
 				if (line.IndexOf("*/") == -1 && firstChar == "*")
@@ -372,6 +370,8 @@ namespace NovelEx {
 			}
 //EX:
 			bool isText = false;
+			string tempTalkString = "";
+			string tempNameString = "";
 
 			foreach (LineObject lo in line_objects) {
 				string line = lo.line;
@@ -379,73 +379,75 @@ namespace NovelEx {
 
 				string firstChar = line[0].ToString();		
 
-//EX:プリプロセッサ的なアレ。
-//ToDo:名前タグを【】にする
-				if(!string.IsNullOrEmpty(JOKEREX.Instance.SystemConfig.ActorMarker)) {
-					if (firstChar == JOKEREX.Instance.SystemConfig.ActorMarker.Substring(0, 1)) {
-						if(JOKEREX.Instance.SystemConfig.ActorMarker.Length <= 1) {
-							line = "[" + JOKEREX.Instance.SystemConfig.ActorCallBack/*  talk_name */ + " val='" + line.Replace(firstChar, "") + "' ]";
-							AbstractComponent cmp = this.makeTag(line, line_num);
-							components.Add(cmp);
-						}
-						else if (line[line.Length-1] == JOKEREX.Instance.SystemConfig.ActorMarker[1]) {
-								line = line.Replace(JOKEREX.Instance.SystemConfig.ActorMarker[1].ToString() , "");
-								line = "[" + JOKEREX.Instance.SystemConfig.ActorCallBack/*  talk_name */ + " val='" + line.Replace(firstChar, "") + "' ]";
-								AbstractComponent cmp = this.makeTag(line, line_num);
-								components.Add(cmp);
-						}
-						else { /*error?*/}
+				//EX:プリプロセッサ的なアレ。
+				//ToDo:名前タグを【】にする
+				if(!string.IsNullOrEmpty(nameTagLeft) && !string.IsNullOrEmpty(nameTagRight)) {
+					if (firstChar ==  nameTagLeft && line[line.Length-1].ToString() == nameTagRight ) {
+						line = line.Replace(firstChar, "");
+						tempNameString = line.Replace(nameTagRight, "");
+//						line = "[" + talkNameTag+ " val='" + line.Replace(firstChar, "") + "' ]";
+//						line = line.Replace(nameTagRight, "");
+//						AbstractComponent cmp = this.makeTag(line, line_num);
+//						components.Add(cmp);
 						continue;
 					}
 				}				
 
+				//"#"がつく場合予約語orネームタグ
 				if (firstChar == "#") {
 					if(RevervedWords.Contains(line)) {
 						parsePreproseccor(line);
 					}
 					else {
-						line = "[" + JOKEREX.Instance.SystemConfig.ActorCallBack/* talk_name */ + " val='" + line.Replace("#", "") + "' ]";
-						AbstractComponent cmp = this.makeTag(line, line_num);
-						components.Add(cmp);
+						tempNameString = line.Replace("#", "");
+//						line = "[" + talkNameTag + " val='" + line.Replace("#", "") + "' ]";
+//						AbstractComponent cmp = this.makeTag(line, line_num);
+//						components.Add(cmp);
 					}
 					continue;
 				}
 
-				if(line == "\r"){
-//ToDo:直前のRを消す
-					if(isText == true && JOKEREX.Instance.SystemConfig.ignoreCR)
-						components.Add(new PComponent());
-					
+				//ToDo:直前のRを消す
+				if (line == "\r")
+				{
+					if(isText == true)// && ignoreCR)
+					{
+						line = "[talk text=\"" + tempTalkString + "\"" + " name=\"" + tempNameString + "\"]";
+						tempNameString = "";
+						tempTalkString = "";
+						AbstractComponent cmp = makeTag(line,line_num);
+//						AbstractComponent cmp = this.makeTag("[p]", line_num);
+						components.Add(cmp);
+					}
+			
 					isText = false;
 					
 					continue;
 				}
 	
-				//テキストファイルの場合
-				if (firstChar != "[" && firstChar != "@") {			
-					line = "[story val=\"" + line + "\"]"; 
-					firstChar = "[";
+//タグでも"@"でもない場合はテキスト
+				if (firstChar != "[" && firstChar != "@") {	
+					tempTalkString += line;
+//					line = "[story val=\"" + line + "\"]"; 
+//					firstChar = "[";
 					isText = true;
 				}
 				else
 					isText = false;
 
 				if (firstChar == "[" || firstChar == "@") {
-					//Debug.Log ("------------");
-					//Debug.Log (line);
-
 					AbstractComponent cmp = this.makeTag (line,line_num);
-
 					//リストに追加
 					components.Add (cmp);
 				}
 
-				if(isText == true && JOKEREX.Instance.SystemConfig.ignoreCR)
-					components.Add(new RComponent());
-
+				if(isText == true)// && ignoreCR)
+				{
+					tempTalkString +="\\n";
+//					AbstractComponent cmp = this.makeTag("[r]", line_num);
+//					components.Add(cmp);
+				}
 			}
-
-//			Debug.Log ("parse finish!");
 
 			return components;
 		}
@@ -455,7 +457,7 @@ namespace NovelEx {
 		//コンポーネントから即実行されるタグを生成
 		public AbstractComponent makeTag(string line) {
 			AbstractComponent cmp = this.makeTag (line, 0);
-			cmp.calcVariable();
+			cmp.calcVariable(null);
 			return cmp;
 		}
 
@@ -470,16 +472,17 @@ namespace NovelEx {
 
 			line = line + param_str +"]";
 
-			Debug.Log (line);
+//			Debug.Log (line);
 
 			AbstractComponent cmp = this.makeTag (line, 0);
-			cmp.calcVariable();
+			cmp.calcVariable(null);
 
 			return cmp;
 		}
 
 		public AbstractComponent makeTag(string line, int line_num) {
 			Tag tag = new Tag (line);
+			tagList.Add(tag);
 
 			//tagの種類によって、実装する命令が変わってくる
 			AbstractComponent cmp = null;
@@ -487,22 +490,24 @@ namespace NovelEx {
 			string className = this.classPrerix+"."+tf.ToTitleCase (tag.Name) + "Component";
 
 			//リフレクションで動的型付け
-			Type masterType = Type.GetType (className);
+			Type masterType = Type.GetType(className);
 
 			try {
 				cmp = (AbstractComponent)Activator.CreateInstance (masterType);
 			}
 			catch(Exception e) 	{
+#if false
 				Debug.Log (e.ToString());
 				//マクロとして登録
 				cmp = new _MacrostartComponent();
+#endif
 			}
 
 			if (cmp != null) {
-				cmp.init (tag, line_num);
+				cmp.init (tag, line_num, scenarioFile);
 
 				//エラーメッセージの蓄積
-				cmp.checkVital();
+				cmp.checkVital(errorManager);
 				cmp.mergeDefaultParam();
 			}
 			return cmp;

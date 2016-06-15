@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
@@ -37,7 +35,7 @@ namespace NovelEx {
 		}
 
 		//変数を実際の値に置き換えて返却する
-		public static string replaceVariable(string str_right) {
+		public static string replaceVariable(string str_right, Variable variable) {
 
 			Dictionary<string,string > dicVar = new Dictionary<string,string>();
 
@@ -49,15 +47,15 @@ namespace NovelEx {
 			Stack<string> var_stack = new Stack<string>(); //２重、３重カッコに対応
 
 			for (var i = 0; i < str_right.Length; i++) {
-				string c = str_right [i].ToString();
+				string c = str_right[i].ToString();
 				if(flag_var_now == true && c == "}") {
 					//変数を格納
 					//Debug.Log ("var_name ============");
 					//Debug.Log (var_name);
-					string var_val = JOKEREX.Instance.ScenarioManager.variable.get(var_name);
+					string var_val = variable.get(var_name);
 
 					if (var_stack.Count == 0) {
-						dicVar [var_name] = var_val;
+						dicVar[var_name] = var_val;
 						flag_var_now = false;
 						var_name = "";
 						new_str_right += var_val;
@@ -75,13 +73,11 @@ namespace NovelEx {
 					var_name += c;
 				if(c == "{" && flag_var_now == true) {
 					var_stack.Push (var_name);
-					var_name = "";
-				
+					var_name = "";			
 				}
 				else if (c == "{" && flag_var_now == false) {
 					flag_var_now = true;
 					var_name = "";
-
 				}
 				else{
 					//タグに文字を追加
@@ -102,16 +98,16 @@ namespace NovelEx {
 			return new_str_right;
 		}
 
-		public static string evaluateString(string exp) {
+		public static string evaluateString(string exp, Variable variable) {
 			//変数かどうかを判定する。今のところの定義は「最初の文字がアルファベット＆'.'がある」
 			if(Regex.IsMatch(exp[0].ToString(), "^[a-zA-Z_]+$") && exp.IndexOf(".") != -1)
-				return JOKEREX.Instance.ScenarioManager.variable.get(exp);
+				return variable.get(exp);
 
 			return exp;
 		}
 
 		//式をを計算して結果を返す　評価はまた別
-		public static string calc(string exp) {
+		public static string calc(string exp, Variable variable) {
 			//ToDo:型チェック
 
 			//比較計算とかの場合は、別途
@@ -124,8 +120,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				if (left == right)
 					return "true";
@@ -139,8 +135,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 				
 				if (left != right)
 					return "true";
@@ -153,8 +149,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);			
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);			
 
 				if (float.Parse (left) >= float.Parse (right))
 					return "true";
@@ -167,8 +163,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				if (float.Parse(left) <= float.Parse(right))
 					return "true";
@@ -181,8 +177,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				if (float.Parse(left) > float.Parse(right))
 					return "true";
@@ -195,8 +191,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				if (float.Parse(left) < float.Parse(right))
 					return "true";
@@ -209,8 +205,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				float k = float.Parse(left) * float.Parse(right);
 				return "" + k;
@@ -222,8 +218,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				float k = float.Parse(left) / float.Parse(right);
 				return "" + k;
@@ -242,8 +238,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				float k = float.Parse(left) + float.Parse(right);
 
@@ -267,8 +263,8 @@ namespace NovelEx {
 				string left = t [0].Trim();
 				string right = t [1].Trim();
 
-				left = evaluateString(left);
-				right = evaluateString(right);
+				left = evaluateString(left, variable);
+				right = evaluateString(right, variable);
 
 				if (flag_minus == true)
 					left = "-" + left;

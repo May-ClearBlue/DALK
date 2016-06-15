@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +16,6 @@ namespace NovelEx {
 
 		public void set(string key, string val)
 		{
-
 			key = key.Replace("{", "").Replace("}", "");
 
 			string[] tmp = key.Split('.');
@@ -32,7 +30,7 @@ namespace NovelEx {
 			}
 
 			this.dicVar[type][variable_name] = val;
-
+#if false
 			//グローバルなら即効反映
 			if (type == "global")
 			{
@@ -43,6 +41,7 @@ namespace NovelEx {
 				//ToDo:
 				//				JOKEREX.Instance.Serializer.SaveGlobalObject(JOKEREX.Instance..globalSetting);
 			}
+#endif
 		}
 
 		public string get(string exp)
@@ -99,7 +98,7 @@ namespace NovelEx {
 			this.dicVar[type] = new Dictionary<string, string>();
 		}
 
-		public void trace(string type)
+		public string trace(string type)
 		{
 			string str = "[trace]" + type + "\n";
 
@@ -108,7 +107,7 @@ namespace NovelEx {
 
 			str += "-----------------";
 
-			Debug.Log("<color=green>" + str + "</color>");
+			return "<color=green>" + str + "</color>";
 		}
 	}
 }

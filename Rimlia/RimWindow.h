@@ -108,7 +108,8 @@ static	LRESULT	CALLBACK	gWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPa
 		BOOL	Resize		( int sx, int sy );
 		BOOL	Adjust		( RECT& );
 
-//setter
+inline	void	Destroy()	{ ::DestroyWindow(m_hWnd); m_hWnd = NULL; }
+			//setter
 		BOOL	SetCaption	( LPCTSTR name );
 		LRESULT	SetPos		( int x, int y );
 		void	SetCursor	( bool bShow );

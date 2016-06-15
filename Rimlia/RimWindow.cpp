@@ -91,16 +91,11 @@ CWindow::CWindow() :
 	m_Config.dialog		= NULL;
 }
 
-CWindow::~CWindow(){
+CWindow::~CWindow() {
 	//::DestroyWindow(m_hWnd);
 }
 
 LRESULT CALLBACK CWindow::MessageProc(HWND hWnd, UINT id, WPARAM wParam, LPARAM lParam) {
-	if(id == WM_DESTROY) {
-		PostQuitMessage(0);
-		return 0;
-	}
-
 	return ::DefWindowProc(hWnd,id,wParam,lParam);
 }
 

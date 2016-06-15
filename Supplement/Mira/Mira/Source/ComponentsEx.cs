@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 
 namespace NovelEx {
@@ -16,6 +15,7 @@ namespace NovelEx {
 		public string line;
 		public int line_num;
 		public string tagName;
+		public string scenarioFile;
 
 		//命令の種類を保持する
 		protected Tag tag;
@@ -26,20 +26,21 @@ namespace NovelEx {
 
 		public AbstractComponent() { }
 
-		public void init (Tag tag, int line_num) {
+		public void init (Tag tag, int line_num, string scenarioFile) {
 			this.tag = tag;
 			this.tagName = tag.Name;
 			this.line_num = line_num;
+			this.scenarioFile = scenarioFile;
 			this.finishAnimationDeletgate = this.finishAnimation;
 		}
 
-		public void checkVital() {
+		public void checkVital( ErrorManager errorManager ) {
 			//タグから必須項目が漏れていないか、デフォルト値が入ってない場合はエラーとして警告を返す
 			foreach (string vital in this.arrayVitalParam) {
 				if (this.tag.getParam (vital) == null) {
 					//エラーを追加
 					string message = "必須パラメータ「" + vital + "」が不足しています";
-					JOKEREX.Instance.errorManager.addLog(message, this.line_num, false);
+					errorManager.addLog(message, this.line_num, false,scenarioFile);
 				}
 			}
 		}
@@ -60,19 +61,19 @@ namespace NovelEx {
 		public virtual void after() { }
 
 		//実行前にパラメータを解析して変数を格納する
-		public void calcVariable() {
+		public void calcVariable(Variable variable, string defaultValue = null) {
 			Dictionary<string,string> tmp_param = new Dictionary<string,string>();
 
 			//タグに入れる
 			foreach (KeyValuePair<string, string> pair in this.originalParam) {
-				tmp_param[pair.Key] = ExpObject.replaceVariable(pair.Value/*this.originalParam[pair.Key]*/);
+				tmp_param[pair.Key] = variable != null ? ExpObject.replaceVariable(pair.Value, variable) : pair.Value;
 			}
 
 			//タグにデフォルト値を設定中かつ、tag が指定されていない場合
-			if(JOKEREX.Instance.StatusManager.TagDefaultVal != "") {
-				if (tmp_param.ContainsKey("tag") && tmp_param["tag"] =="")
-					tmp_param["tag"] = JOKEREX.Instance.StatusManager.TagDefaultVal;
+			if(!string.IsNullOrEmpty(defaultValue) && tmp_param.ContainsKey("tag") && tmp_param["tag"] =="") {
+				tmp_param["tag"] = defaultValue;
 			}
+
 			this.param = tmp_param;
 		}
 
@@ -82,7 +83,6 @@ namespace NovelEx {
 
 			//タグに入れる
 			foreach(KeyValuePair<string, string> pair in param) {
-
 				this.originalParam [pair.Key] = pair.Value;
 
 				/*
@@ -98,12 +98,11 @@ namespace NovelEx {
 			}
 		}
 
-		public void show() { 
-//			Debug.Log ("this is show:" + this.tag.Original);
-		}
+		public void show() {  }
 		//始まった時
 		abstract public void start();
 	}
+#if false
 
 /*
 
@@ -359,4 +358,5 @@ title=改ページクリック無し
 			Debug.Log (this.tag.Original);
 		}
 	}
+#endif
 }

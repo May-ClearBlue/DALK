@@ -1,7 +1,6 @@
 #include "MultiStdafx.h"
 #include "DALK.h"
 
-
 void Dalk::Init(int width, int height) {
 	m_hWnd = NULL;
 
@@ -31,20 +30,37 @@ void Dalk::Init(int width, int height) {
 	m_Device.Set2DCustom();
 
 	_DEBUG_HEAP_INFO();
-
+#if 0
 	m_RenderTexture.Create(_DALK_APP_SCREEN_WIDTH_, _DALK_APP_SCREEN_HEIGHT_, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, TRUE);
 	m_RenderSprite.SetTexture(&m_RenderTexture);
+#endif
 
 #if defined(_DALK_USE_SQUIRREL_)
 	InitSquirrel();
 #endif
 
+#if 0
 	m_Texture.LoadImage("airi.png");
 	m_Sprite.SetTexture(&m_Texture);
 	m_Sprite.SetDiffuse(0.0f, 1.0f, 0.0f, 1.0f);
 	m_Sprite.SetXYZ2D(0, 0, 512, 512);
 	//	SaveBMP(m_Texture.GetInfo(), 0, "DDD.BMP");
+#endif
 }
+
+#ifdef _DALK_WINDOWS_
+LRESULT CALLBACK Dalk::MessageProc(HWND hWnd, UINT id, WPARAM wParam, LPARAM lParam) {
+	if(id == WM_CLOSE)
+		::PostQuitMessage(0);
+//		::SendMessage(m_hWnd, WM_DESTROY, 0, 0);
+//	else if ( id == WM_DESTROY )
+//		::PostQuitMessage(0);
+	else
+		return ::DefWindowProc(hWnd,id,wParam,lParam);
+
+	return 0;
+}
+#endif
 
 #if defined(_DALK_USE_SQUIRREL_)
 void Dalk::InitSquirrel(int stackSize)
@@ -73,7 +89,7 @@ void Dalk::RunSquirrel(_TCHAR fileName)
 
 #endif
 
-void Dalk::ShutDown()
+DWORD Dalk::ShutDown()
 {
 #if defined(_DALK_USE_SQUIRREL_)
 	//Sqratライブラリのクラスが破棄されるとき、vmを利用しているため、sq_closeする前にSqratライブラリのクラスを破棄する必要がある
@@ -83,6 +99,25 @@ void Dalk::ShutDown()
 	// VMを解放
 	sq_close(m_hSquirrel);
 #endif
+
+	m_Device.Release();
+	
+#if defined(_DALK_USE_DIRECT3D_)
+	CDirect3D::Release();
+#elif defined(_DALK_USE_OPENGL_)
+	COpenGL::Release();
+#endif    
+
+#if defined(_DALK_USE_XAUDIO_)
+	CXAudio2::Release();
+#elif defined(_DALK_USE_OPENAL_)
+	COpenAL::Release();
+#endif    
+
+#ifdef _DALK_WINDOWS_
+	Destroy();
+#endif
+	return 0;
 }
 
 void Dalk::Update() {
@@ -119,6 +154,7 @@ void Dalk::Update() {
 
 void Dalk::Draw() {
 	m_Sprite.DrawUp();
+
 #if 0
 	if (GetAsyncKeyState(VK_SPACE)){
 		//				m_Sprite.Draw();
@@ -160,7 +196,8 @@ void Dalk::Run() {
 	do{
 		if (::PeekMessage(&msg, NULL, 0, 0, PM_NOREMOVE)) {
 			if (!::GetMessage(&msg, NULL, 0, 0))/* メッセージ処理 */
-				m_State = -1;
+				m_State = 1;
+
 			::TranslateMessage(&msg);
 			::DispatchMessage(&msg);
 		}
@@ -172,7 +209,6 @@ void Dalk::Run() {
 }
 
 #endif
-
 
 /*
 //			if(GetAsyncKeyState(VK_RETURN))
