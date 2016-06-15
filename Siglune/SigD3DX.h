@@ -225,8 +225,6 @@ typedef struct _D3DVIEWPORT9 {
     float       MaxZ;
 } D3DVIEWPORT9;
 
-#endif
-
 typedef enum D3DPOOL
 {
     D3DPOOL_DEFAULT = 0,
@@ -235,3 +233,6 @@ typedef enum D3DPOOL
     D3DPOOL_SCRATCH = 3,
     D3DPOOL_FORCE_DWORD = 0x7fffffff,
 } D3DPOOL, *LPD3DPOOL;
+
+#endif
+

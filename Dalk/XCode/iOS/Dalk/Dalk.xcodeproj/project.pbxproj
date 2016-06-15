@@ -40,7 +40,6 @@
 		58C9E1BD1D0F09F90059145B /* RinseAudioSource_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */; };
 		58C9E1BE1D0F09F90059145B /* RinseAudioSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */; };
 		58C9E1C91D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */; };
-		58C9E1CA1D0F0B370059145B /* SigDirect3DDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */; };
 		58C9E1CD1D0F0D0D0059145B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1CC1D0F0D0D0059145B /* OpenGLES.framework */; };
 		58C9E1CF1D0F0D170059145B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1CE1D0F0D170059145B /* OpenAL.framework */; };
 		58C9E1E41D0F0F7C0059145B /* EliShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D21D0F0F7C0059145B /* EliShader.cpp */; };
@@ -148,7 +147,6 @@
 		58C9E1B71D0F09F90059145B /* RinseAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseAudioSource.h; path = ../../../../Rinse/RinseAudioSource.h; sourceTree = "<group>"; };
 		58C9E1BA1D0F09F90059145B /* RinseInitXAudio2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseInitXAudio2.h; path = ../../../../Rinse/RinseInitXAudio2.h; sourceTree = SOURCE_ROOT; };
 		58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = SigDirect3DDevice_OpenGL.cpp; path = ../../../../Siglune/SigDirect3DDevice_OpenGL.cpp; sourceTree = "<group>"; };
-		58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = SigDirect3DDevice.cpp; path = ../../../../Siglune/SigDirect3DDevice.cpp; sourceTree = "<group>"; };
 		58C9E1C41D0F0B370059145B /* SigD3DX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigD3DX.h; path = ../../../../Siglune/SigD3DX.h; sourceTree = "<group>"; };
 		58C9E1C51D0F0B370059145B /* SigDirect3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3D.h; path = ../../../../Siglune/SigDirect3D.h; sourceTree = "<group>"; };
 		58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3DDevice.h; path = ../../../../Siglune/SigDirect3DDevice.h; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */,
-				58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */,
 				58C9E1C41D0F0B370059145B /* SigD3DX.h */,
 				58C9E1C51D0F0B370059145B /* SigDirect3D.h */,
 				58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */,
@@ -530,7 +527,6 @@
 				58C9E1E41D0F0F7C0059145B /* EliShader.cpp in Sources */,
 				58C555081D0849DB0091EC46 /* RimDataStream.cpp in Sources */,
 				58C555141D0849DB0091EC46 /* RimOggDecoder.cpp in Sources */,
-				58C9E1CA1D0F0B370059145B /* SigDirect3DDevice.cpp in Sources */,
 				58C555031D0849DB0091EC46 /* bmfont.cpp in Sources */,
 				58C555111D0849DB0091EC46 /* RimImageSaver.cpp in Sources */,
 				58C5551A1D0849DB0091EC46 /* RimSysInfo_iOS.cpp in Sources */,
@@ -694,6 +690,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					_DALK_IOS_,
+					_DALK_USE_OPENGL_,
+					_DALK_USE_OPENAL_,
+				);
 				HEADER_SEARCH_PATHS = (
 					$PROJECT_DIR/../../../../../,
 					$PROJECT_DIR/../../../../../External,
@@ -703,12 +705,8 @@
 					../../../../,
 				);
 				INFOPLIST_FILE = Dalk/Info.plist;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					_DALK_USE_OPENGL_,
-					_DALK_IOS_,
-					_DALK_USE_OPENAL_,
-					_DALK_DEBUG_BUILD_,
-				);
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.Dalk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -729,12 +727,8 @@
 					../../../../,
 				);
 				INFOPLIST_FILE = Dalk/Info.plist;
-				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
-					_DALK_USE_OPENGL_,
-					_DALK_IOS_,
-					_DALK_USE_OPENAL_,
-					_DALK_DEBUG_BUILD_,
-				);
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.Dalk";
 				PRODUCT_NAME = "$(TARGET_NAME)";

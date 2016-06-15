@@ -175,7 +175,7 @@ inline	void	SetAlphaBlendFunc	(D3DBLEND src, D3DBLEND dest)	{ glBlendFunc(src, d
 //--------------------シーン描画系---------------------
 inline	void	ResetTexture ()					{ glBindTexture(GL_TEXTURE_2D, 0); }
 inline	void	Clear( UINT r, UINT g, UINT b )	{ glClearColor(float(r) / 256.0f, float(g) / 256.0f, float(b) / 256.0f, 1.0f); glClear(GL_COLOR_BUFFER_BIT); }
-inline	HRESULT	BeginScene()					{ CShader::ChangeShader(_SHADER_DEFAULT_); glActiveTexture(GL_TEXTURE0); }
+    inline	HRESULT	BeginScene()					{ CShader::ChangeShader(_SHADER_DEFAULT_); glActiveTexture(GL_TEXTURE0); return 0; }
 //inline	void	EndScene()						{`return m_pDevice->EndScene(); }
 //inline	HRESULT	ResetDevice()					{ return m_pDevice->Reset( &m_d3dparam[m_bWindowed] ); }
 //inline	void	SetFVF(VERTEX_TYPE type)		{ m_Shader[m_CurrentShader].SetTLVertex(NULL); }

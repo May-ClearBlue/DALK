@@ -1,6 +1,6 @@
 ﻿#include "Multistdafx.h"
 
-#include "SigDirect3DDevice.h"
+#include <SigDirect3DDevice.h>
 
 //static
 GLuint	COpenGL::g_FrontRenderBuffer;

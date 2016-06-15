@@ -71,5 +71,7 @@ _RINSERESULT IAudioBuffer::SubmitBuffer	( _AUDIOSOURCE pHandle, BOOL isStream ) 
 		alSourcei(pHandle, AL_LOOPING, m_BufferInfo.LoopCount == XAUDIO2_LOOP_INFINITE ? AL_TRUE : AL_FALSE);
 		return 0;
 	}
+    
+    return r;
 #endif
 }

@@ -1,5 +1,4 @@
-﻿
-#ifndef _RIN_XAUDIO2_
+﻿#ifndef _RIN_XAUDIO2_
 #define _RIN_XAUDIO2_
 
 #include "RinseAudioDevice.h"

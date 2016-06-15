@@ -1,8 +1,6 @@
 ﻿#include "Multistdafx.h"
 #include <Siglune/SigDirect3D.h>
-#include "EliVertexBuffer.h"
-
-//#include "glm/gtc/matrix_transform.hpp"
+#include <EliVertexBuffer.h>
 
 CVertexBuffer::CVertexBuffer() :
 	m_Num(-1),

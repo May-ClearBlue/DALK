@@ -232,10 +232,10 @@ inline	void	SetProjectionFrustum( float left, float right, float bottom, float t
 inline	void	SetViewMatrix(_VECTOR& Eye, _VECTOR& At, _VECTOR& Up)						{ D3DXMatrixLookAtLH(_MATRIXARRAYD3DXPTR(m_UniformVar.view), _VECTOR3D3DXPTR(Eye), _VECTOR3D3DXPTR(At), _VECTOR3D3DXPTR(Up)); }
 #elif defined(_DALK_IOS_)
 inline	void	SetShader(){ glUseProgram(m_ProgramID); /*SetUniform();*/ }
-inline	void	SetProjectionMatrix	( float fovy, float aspect, float znear, float zfar )	{ m_UniformVar.projection = glm::perspective(fovy, aspect, znear, zfar); }
-inline	void	SetProjectionOrtho	( float left, float right, float bottom, float top, float zNear, float zFar) { m_UniformVar.projection = glm::ortho( left, right, bottom, top, zNear, zFar); }
-inline	void	SetProjectionFrustum( float left, float right, float bottom, float top, float zNear, float zFar) { m_UniformVar.projection = glm::frustum( left, right, bottom, top, zNear, zFar); }
-inline	void	SetViewMatrix		( _VECTOR& Eye, _VECTOR& At, _VECTOR& Up )				{ m_UniformVar.view = glm::lookAt(Eye, At, Up); }
+inline	void	SetProjectionMatrix	( float fovy, float aspect, float znear, float zfar )	{ _MATRIXPERSPECTIVE( m_UniformVar.projection, fovy, aspect, znear, zfar); }
+inline	void	SetProjectionOrtho	( float left, float right, float bottom, float top, float zNear, float zFar) { _MATRIXORTHO( m_UniformVar.projection, left, right, bottom, top, zNear, zFar); }
+inline	void	SetProjectionFrustum( float left, float right, float bottom, float top, float zNear, float zFar) { /*m_UniformVar.projection = glm::frustum( left, right, bottom, top, zNear, zFar)*/; }
+inline	void	SetViewMatrix		( _VECTOR& Eye, _VECTOR& At, _VECTOR& Up )				{ _MATRIXLOOKAT( m_UniformVar.view, Eye, At, Up); }
 #endif
         BOOL	CreateShaderFromString	(const char* Ver, const char* Fl, SHADE_UNIFORM_ENUM format);
         BOOL	CreateShaderFromFile	(const char* Ver, const char* Fl, SHADE_UNIFORM_ENUM format);

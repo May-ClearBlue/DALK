@@ -332,7 +332,7 @@ virtual	void DrawPrimitiveUp() {
 	EliVertex::SetVertexPointer(GetVertexType(), _Vertex);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 #endif
-    SIG_ERRORCHECK(r,TEXT("Failed@CVertexSquare::DrawPrimitiveUp()"));
+    SIG_ERRORCHECK(r, "Failed@CVertexSquare::DrawPrimitiveUp()");
 }
 
 };
