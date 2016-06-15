@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Rimlia\bmfont.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimACMDecoder.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimCGLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimCommonCtrl.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimCompressor.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimCriticalSection.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimDataStream.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimDDSLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimDIBSection.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimDLLLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimEventObject.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimFile.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimFileStream.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimFont.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimFreeType.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimHeap.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimImageLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimImageSaver.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimLZMACompressor.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimNetWork.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimOggDecoder.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimPNGLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimPSDLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimRegistry.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimRLECompressor.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimSignal.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimSoundDecoder.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimSoundManager.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimSysInfo.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimSysInfo_Win.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimThread.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimTimer.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimTLGLoader.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimTypeDef.h" />
+    <ClInclude Include="..\..\..\..\..\Rimlia\RimWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Rimlia\bmfont.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimACMDecoder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimCGLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimCommonCtrl.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimCriticalSection.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimDataStream.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimDDSLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimDIBSection.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimFile.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimFileStream.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimFont.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimHeap.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimImageLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimImageSaver.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimLZMACompressor.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimNetWork.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimOggDecoder.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimPNGLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimRegistry.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimRLECompressor.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimSoundDecoder.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimSoundManager.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimSysInfo_Win.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimTimer.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimTLGLoader.cpp" />
+    <ClCompile Include="..\..\..\..\..\Rimlia\RimWindow.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FD6E90F1-E47C-4FB8-A774-1BD0A0214A93}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Rimlia</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DALK_WINDOWS_;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>MultiStdAfx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../../../../;$(ProjectDir)../../../../../../External;$(ProjectDir)../../../../../../External/sqrat-0.9.2/include;$(ProjectDir)../../../../../../External/squirrel/include;$(ProjectDir)../../../../../../External/libogg-1.3.2/include;$(ProjectDir)../../../../../../External/libvorbis-1.3.5/include</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WIN64;_DALK_WINDOWS_;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>MultiStdAfx.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../../../../;$(ProjectDir)../../../../../../External;$(ProjectDir)../../../../../../External/sqrat-0.9.2/include;$(ProjectDir)../../../../../../External/squirrel/include;$(ProjectDir)../../../../../../External/libogg-1.3.2/include;$(ProjectDir)../../../../../../External/libvorbis-1.3.5/include</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_DALK_WINDOWS_;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../../../../;$(ProjectDir)../../../../../../External;$(ProjectDir)../../../../../../External/sqrat-0.9.2/include;$(ProjectDir)../../../../../../External/squirrel/include;$(ProjectDir)../../../../../../External/libogg-1.3.2/include;$(ProjectDir)../../../../../../External/libvorbis-1.3.5/include</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>MultiStdAfx.h</PrecompiledHeaderFile>
+      <SDLCheck>
+      </SDLCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WIN64;_DALK_WINDOWS_;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)../../../../../;$(ProjectDir)../../../../../../External;$(ProjectDir)../../../../../../External/sqrat-0.9.2/include;$(ProjectDir)../../../../../../External/squirrel/include;$(ProjectDir)../../../../../../External/libogg-1.3.2/include;$(ProjectDir)../../../../../../External/libvorbis-1.3.5/include</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>MultiStdAfx.h</PrecompiledHeaderFile>
+      <SDLCheck>
+      </SDLCheck>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

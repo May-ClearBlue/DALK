@@ -1,0 +1,834 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		582EECE51D08640A00997860 /* DalkStringMacro.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 582EECDB1D08640A00997860 /* DalkStringMacro.cpp */; };
+		58C5548D1D0840B00091EC46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5548C1D0840B00091EC46 /* main.m */; };
+		58C554901D0840B00091EC46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5548F1D0840B00091EC46 /* AppDelegate.m */; };
+		58C554921D0840B00091EC46 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 58C554911D0840B00091EC46 /* Shader.fsh */; };
+		58C554941D0840B00091EC46 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 58C554931D0840B00091EC46 /* Shader.vsh */; };
+		58C554971D0840B00091EC46 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C554961D0840B00091EC46 /* GameViewController.m */; };
+		58C5549A1D0840B00091EC46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C554981D0840B00091EC46 /* Main.storyboard */; };
+		58C5549C1D0840B00091EC46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C5549B1D0840B00091EC46 /* Assets.xcassets */; };
+		58C5549F1D0840B00091EC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C5549D1D0840B00091EC46 /* LaunchScreen.storyboard */; };
+		58C554AA1D0840B00091EC46 /* DalkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C554A91D0840B00091EC46 /* DalkTests.m */; };
+		58C554B51D0840B00091EC46 /* DalkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C554B41D0840B00091EC46 /* DalkUITests.m */; };
+		58C555031D0849DB0091EC46 /* bmfont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554C31D0849DB0091EC46 /* bmfont.cpp */; };
+		58C555051D0849DB0091EC46 /* RimCGLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554C71D0849DB0091EC46 /* RimCGLoader.cpp */; };
+		58C555081D0849DB0091EC46 /* RimDataStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554CE1D0849DB0091EC46 /* RimDataStream.cpp */; };
+		58C555091D0849DB0091EC46 /* RimDDSLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554D01D0849DB0091EC46 /* RimDDSLoader.cpp */; };
+		58C5550B1D0849DB0091EC46 /* RimExtAudioDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554D61D0849DB0091EC46 /* RimExtAudioDecoder.cpp */; };
+		58C5550C1D0849DB0091EC46 /* RimFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554D81D0849DB0091EC46 /* RimFile.cpp */; };
+		58C5550D1D0849DB0091EC46 /* RimFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554DA1D0849DB0091EC46 /* RimFileStream.cpp */; };
+		58C5550E1D0849DB0091EC46 /* RimFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554DC1D0849DB0091EC46 /* RimFont.cpp */; };
+		58C5550F1D0849DB0091EC46 /* RimHeap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554DF1D0849DB0091EC46 /* RimHeap.cpp */; };
+		58C555101D0849DB0091EC46 /* RimImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554E11D0849DB0091EC46 /* RimImageLoader.cpp */; };
+		58C555111D0849DB0091EC46 /* RimImageSaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554E31D0849DB0091EC46 /* RimImageSaver.cpp */; };
+		58C555141D0849DB0091EC46 /* RimOggDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554E91D0849DB0091EC46 /* RimOggDecoder.cpp */; };
+		58C555151D0849DB0091EC46 /* RimPNGLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554EB1D0849DB0091EC46 /* RimPNGLoader.cpp */; };
+		58C555171D0849DB0091EC46 /* RimRLECompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554F01D0849DB0091EC46 /* RimRLECompressor.cpp */; };
+		58C555181D0849DB0091EC46 /* RimSoundDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554F31D0849DB0091EC46 /* RimSoundDecoder.cpp */; };
+		58C555191D0849DB0091EC46 /* RimSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554F51D0849DB0091EC46 /* RimSoundManager.cpp */; };
+		58C5551A1D0849DB0091EC46 /* RimSysInfo_iOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554F71D0849DB0091EC46 /* RimSysInfo_iOS.cpp */; };
+		58C5551C1D0849DB0091EC46 /* RimTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C554FC1D0849DB0091EC46 /* RimTimer.cpp */; };
+		58C9E1BB1D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1B21D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp */; };
+		58C9E1BD1D0F09F90059145B /* RinseAudioSource_Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */; };
+		58C9E1BE1D0F09F90059145B /* RinseAudioSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */; };
+		58C9E1C91D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */; };
+		58C9E1CA1D0F0B370059145B /* SigDirect3DDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */; };
+		58C9E1CD1D0F0D0D0059145B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1CC1D0F0D0D0059145B /* OpenGLES.framework */; };
+		58C9E1CF1D0F0D170059145B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1CE1D0F0D170059145B /* OpenAL.framework */; };
+		58C9E1E41D0F0F7C0059145B /* EliShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D21D0F0F7C0059145B /* EliShader.cpp */; };
+		58C9E1E51D0F0F7C0059145B /* EliSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */; };
+		58C9E1E61D0F0F7C0059145B /* EliTexture_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */; };
+		58C9E1E81D0F0F7C0059145B /* EliVertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */; };
+		58C9E1E91D0F0F7C0059145B /* EliVertexTypeDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */; };
+		58C9E1EA1D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */; };
+		58C9E1EE1D0F14AE0059145B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1ED1D0F14AE0059145B /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58C554A61D0840B00091EC46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58C554801D0840B00091EC46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58C554871D0840B00091EC46;
+			remoteInfo = Dalk;
+		};
+		58C554B11D0840B00091EC46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58C554801D0840B00091EC46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58C554871D0840B00091EC46;
+			remoteInfo = Dalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		582EECDB1D08640A00997860 /* DalkStringMacro.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = DalkStringMacro.cpp; path = ../../../../DalkStringMacro.cpp; sourceTree = "<group>"; };
+		582EECDC1D08640A00997860 /* DalkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkConfig.h; path = ../../../../DalkConfig.h; sourceTree = "<group>"; };
+		582EECDD1D08640A00997860 /* DalkErrorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkErrorType.h; path = ../../../../DalkErrorType.h; sourceTree = "<group>"; };
+		582EECDE1D08640A00997860 /* DalkExternalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkExternalManager.h; path = ../../../../DalkExternalManager.h; sourceTree = "<group>"; };
+		582EECDF1D08640A00997860 /* DalkLocalizer_JP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkLocalizer_JP.h; path = ../../../../DalkLocalizer_JP.h; sourceTree = "<group>"; };
+		582EECE01D08640A00997860 /* DalkStdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkStdio.h; path = ../../../../DalkStdio.h; sourceTree = "<group>"; };
+		582EECE11D08640A00997860 /* DalkString_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkString_iOS.h; path = ../../../../DalkString_iOS.h; sourceTree = "<group>"; };
+		582EECE21D08640A00997860 /* DalkStringMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkStringMacro.h; path = ../../../../DalkStringMacro.h; sourceTree = "<group>"; };
+		582EECE31D08640A00997860 /* DalkTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkTypeDef.h; path = ../../../../DalkTypeDef.h; sourceTree = "<group>"; };
+		582EECE41D08640A00997860 /* MultiStdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiStdAfx.h; path = ../../../../MultiStdAfx.h; sourceTree = "<group>"; };
+		58C554881D0840B00091EC46 /* Dalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C5548C1D0840B00091EC46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58C5548E1D0840B00091EC46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58C5548F1D0840B00091EC46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58C554911D0840B00091EC46 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		58C554931D0840B00091EC46 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		58C554951D0840B00091EC46 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		58C554961D0840B00091EC46 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		58C554991D0840B00091EC46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58C5549B1D0840B00091EC46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58C5549E1D0840B00091EC46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58C554A01D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58C554A51D0840B00091EC46 /* DalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C554A91D0840B00091EC46 /* DalkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DalkTests.m; sourceTree = "<group>"; };
+		58C554AB1D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58C554B01D0840B00091EC46 /* DalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C554B41D0840B00091EC46 /* DalkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DalkUITests.m; sourceTree = "<group>"; };
+		58C554B61D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58C554C31D0849DB0091EC46 /* bmfont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = bmfont.cpp; path = ../../../../Rimlia/bmfont.cpp; sourceTree = "<group>"; };
+		58C554C41D0849DB0091EC46 /* bmfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bmfont.h; path = ../../../../Rimlia/bmfont.h; sourceTree = "<group>"; };
+		58C554C71D0849DB0091EC46 /* RimCGLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimCGLoader.cpp; path = ../../../../Rimlia/RimCGLoader.cpp; sourceTree = "<group>"; };
+		58C554C81D0849DB0091EC46 /* RimCGLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimCGLoader.h; path = ../../../../Rimlia/RimCGLoader.h; sourceTree = "<group>"; };
+		58C554CB1D0849DB0091EC46 /* RimCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimCompressor.h; path = ../../../../Rimlia/RimCompressor.h; sourceTree = "<group>"; };
+		58C554CE1D0849DB0091EC46 /* RimDataStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimDataStream.cpp; path = ../../../../Rimlia/RimDataStream.cpp; sourceTree = "<group>"; };
+		58C554CF1D0849DB0091EC46 /* RimDataStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimDataStream.h; path = ../../../../Rimlia/RimDataStream.h; sourceTree = "<group>"; };
+		58C554D01D0849DB0091EC46 /* RimDDSLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimDDSLoader.cpp; path = ../../../../Rimlia/RimDDSLoader.cpp; sourceTree = "<group>"; };
+		58C554D11D0849DB0091EC46 /* RimDDSLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimDDSLoader.h; path = ../../../../Rimlia/RimDDSLoader.h; sourceTree = "<group>"; };
+		58C554D51D0849DB0091EC46 /* RimEventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimEventObject.h; path = ../../../../Rimlia/RimEventObject.h; sourceTree = "<group>"; };
+		58C554D61D0849DB0091EC46 /* RimExtAudioDecoder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimExtAudioDecoder.cpp; path = ../../../../Rimlia/RimExtAudioDecoder.cpp; sourceTree = "<group>"; };
+		58C554D71D0849DB0091EC46 /* RimExtAudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimExtAudioDecoder.h; path = ../../../../Rimlia/RimExtAudioDecoder.h; sourceTree = "<group>"; };
+		58C554D81D0849DB0091EC46 /* RimFile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimFile.cpp; path = ../../../../Rimlia/RimFile.cpp; sourceTree = "<group>"; };
+		58C554D91D0849DB0091EC46 /* RimFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimFile.h; path = ../../../../Rimlia/RimFile.h; sourceTree = "<group>"; };
+		58C554DA1D0849DB0091EC46 /* RimFileStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimFileStream.cpp; path = ../../../../Rimlia/RimFileStream.cpp; sourceTree = "<group>"; };
+		58C554DB1D0849DB0091EC46 /* RimFileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimFileStream.h; path = ../../../../Rimlia/RimFileStream.h; sourceTree = "<group>"; };
+		58C554DC1D0849DB0091EC46 /* RimFont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimFont.cpp; path = ../../../../Rimlia/RimFont.cpp; sourceTree = "<group>"; };
+		58C554DD1D0849DB0091EC46 /* RimFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimFont.h; path = ../../../../Rimlia/RimFont.h; sourceTree = "<group>"; };
+		58C554DE1D0849DB0091EC46 /* RimFreeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimFreeType.h; path = ../../../../Rimlia/RimFreeType.h; sourceTree = "<group>"; };
+		58C554DF1D0849DB0091EC46 /* RimHeap.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimHeap.cpp; path = ../../../../Rimlia/RimHeap.cpp; sourceTree = "<group>"; };
+		58C554E01D0849DB0091EC46 /* RimHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimHeap.h; path = ../../../../Rimlia/RimHeap.h; sourceTree = "<group>"; };
+		58C554E11D0849DB0091EC46 /* RimImageLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimImageLoader.cpp; path = ../../../../Rimlia/RimImageLoader.cpp; sourceTree = "<group>"; };
+		58C554E21D0849DB0091EC46 /* RimImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimImageLoader.h; path = ../../../../Rimlia/RimImageLoader.h; sourceTree = "<group>"; };
+		58C554E31D0849DB0091EC46 /* RimImageSaver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimImageSaver.cpp; path = ../../../../Rimlia/RimImageSaver.cpp; sourceTree = "<group>"; };
+		58C554E41D0849DB0091EC46 /* RimImageSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimImageSaver.h; path = ../../../../Rimlia/RimImageSaver.h; sourceTree = "<group>"; };
+		58C554E91D0849DB0091EC46 /* RimOggDecoder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimOggDecoder.cpp; path = ../../../../Rimlia/RimOggDecoder.cpp; sourceTree = "<group>"; };
+		58C554EA1D0849DB0091EC46 /* RimOggDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimOggDecoder.h; path = ../../../../Rimlia/RimOggDecoder.h; sourceTree = "<group>"; };
+		58C554EB1D0849DB0091EC46 /* RimPNGLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimPNGLoader.cpp; path = ../../../../Rimlia/RimPNGLoader.cpp; sourceTree = "<group>"; };
+		58C554EC1D0849DB0091EC46 /* RimPNGLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimPNGLoader.h; path = ../../../../Rimlia/RimPNGLoader.h; sourceTree = "<group>"; };
+		58C554ED1D0849DB0091EC46 /* RimPSDLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimPSDLoader.h; path = ../../../../Rimlia/RimPSDLoader.h; sourceTree = "<group>"; };
+		58C554F01D0849DB0091EC46 /* RimRLECompressor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimRLECompressor.cpp; path = ../../../../Rimlia/RimRLECompressor.cpp; sourceTree = "<group>"; };
+		58C554F11D0849DB0091EC46 /* RimRLECompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimRLECompressor.h; path = ../../../../Rimlia/RimRLECompressor.h; sourceTree = "<group>"; };
+		58C554F21D0849DB0091EC46 /* RimSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimSignal.h; path = ../../../../Rimlia/RimSignal.h; sourceTree = "<group>"; };
+		58C554F31D0849DB0091EC46 /* RimSoundDecoder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimSoundDecoder.cpp; path = ../../../../Rimlia/RimSoundDecoder.cpp; sourceTree = "<group>"; };
+		58C554F41D0849DB0091EC46 /* RimSoundDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimSoundDecoder.h; path = ../../../../Rimlia/RimSoundDecoder.h; sourceTree = "<group>"; };
+		58C554F51D0849DB0091EC46 /* RimSoundManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimSoundManager.cpp; path = ../../../../Rimlia/RimSoundManager.cpp; sourceTree = "<group>"; };
+		58C554F61D0849DB0091EC46 /* RimSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimSoundManager.h; path = ../../../../Rimlia/RimSoundManager.h; sourceTree = "<group>"; };
+		58C554F71D0849DB0091EC46 /* RimSysInfo_iOS.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimSysInfo_iOS.cpp; path = ../../../../Rimlia/RimSysInfo_iOS.cpp; sourceTree = "<group>"; };
+		58C554FA1D0849DB0091EC46 /* RimSysInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimSysInfo.h; path = ../../../../Rimlia/RimSysInfo.h; sourceTree = "<group>"; };
+		58C554FB1D0849DB0091EC46 /* RimThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimThread.h; path = ../../../../Rimlia/RimThread.h; sourceTree = "<group>"; };
+		58C554FC1D0849DB0091EC46 /* RimTimer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RimTimer.cpp; path = ../../../../Rimlia/RimTimer.cpp; sourceTree = "<group>"; };
+		58C554FD1D0849DB0091EC46 /* RimTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimTimer.h; path = ../../../../Rimlia/RimTimer.h; sourceTree = "<group>"; };
+		58C555001D0849DB0091EC46 /* RimTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimTypeDef.h; path = ../../../../Rimlia/RimTypeDef.h; sourceTree = "<group>"; };
+		58C9E1B21D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioDevice_OpenAL.cpp; path = ../../../../Rinse/RinseAudioDevice_OpenAL.cpp; sourceTree = "<group>"; };
+		58C9E1B41D0F09F90059145B /* RinseAudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseAudioDevice.h; path = ../../../../Users/swatty/Dropbox/Source/DALK/Rinse/RinseAudioDevice.h; sourceTree = DEVELOPER_DIR; };
+		58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioSource_Common.cpp; path = ../../../../Rinse/RinseAudioSource_Common.cpp; sourceTree = "<group>"; };
+		58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioSource.cpp; path = ../../../../Rinse/RinseAudioSource.cpp; sourceTree = "<group>"; };
+		58C9E1B71D0F09F90059145B /* RinseAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseAudioSource.h; path = ../../../../Rinse/RinseAudioSource.h; sourceTree = "<group>"; };
+		58C9E1BA1D0F09F90059145B /* RinseInitXAudio2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseInitXAudio2.h; path = ../../../../Rinse/RinseInitXAudio2.h; sourceTree = SOURCE_ROOT; };
+		58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = SigDirect3DDevice_OpenGL.cpp; path = ../../../../Siglune/SigDirect3DDevice_OpenGL.cpp; sourceTree = "<group>"; };
+		58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = SigDirect3DDevice.cpp; path = ../../../../Siglune/SigDirect3DDevice.cpp; sourceTree = "<group>"; };
+		58C9E1C41D0F0B370059145B /* SigD3DX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigD3DX.h; path = ../../../../Siglune/SigD3DX.h; sourceTree = "<group>"; };
+		58C9E1C51D0F0B370059145B /* SigDirect3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3D.h; path = ../../../../Siglune/SigDirect3D.h; sourceTree = "<group>"; };
+		58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3DDevice.h; path = ../../../../Siglune/SigDirect3DDevice.h; sourceTree = "<group>"; };
+		58C9E1C71D0F0B370059145B /* SigDirect3DInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3DInit.h; path = ../../../../Siglune/SigDirect3DInit.h; sourceTree = "<group>"; };
+		58C9E1CC1D0F0D0D0059145B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		58C9E1CE1D0F0D170059145B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		58C9E1D21D0F0F7C0059145B /* EliShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliShader.cpp; path = ../../../../Ellison/EliShader.cpp; sourceTree = "<group>"; };
+		58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliSprite.cpp; path = ../../../../Ellison/EliSprite.cpp; sourceTree = "<group>"; };
+		58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliTexture_OpenGL.cpp; path = ../../../../Ellison/EliTexture_OpenGL.cpp; sourceTree = "<group>"; };
+		58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVertexBuffer.cpp; path = ../../../../Ellison/EliVertexBuffer.cpp; sourceTree = "<group>"; };
+		58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVertexTypeDef.cpp; path = ../../../../Ellison/EliVertexTypeDef.cpp; sourceTree = "<group>"; };
+		58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVetexBuffer_OpenGL.cpp; path = ../../../../Ellison/EliVetexBuffer_OpenGL.cpp; sourceTree = "<group>"; };
+		58C9E1DB1D0F0F7C0059145B /* EliCgShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliCgShader.h; path = ../../../../Ellison/EliCgShader.h; sourceTree = "<group>"; };
+		58C9E1DC1D0F0F7C0059145B /* EliMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliMath.h; path = ../../../../Ellison/EliMath.h; sourceTree = "<group>"; };
+		58C9E1DD1D0F0F7C0059145B /* EliShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliShader.h; path = ../../../../Ellison/EliShader.h; sourceTree = "<group>"; };
+		58C9E1DE1D0F0F7C0059145B /* EliSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliSprite.h; path = ../../../../Ellison/EliSprite.h; sourceTree = "<group>"; };
+		58C9E1DF1D0F0F7C0059145B /* EliTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliTexture.h; path = ../../../../Ellison/EliTexture.h; sourceTree = SOURCE_ROOT; };
+		58C9E1E01D0F0F7C0059145B /* EliVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexBuffer.h; path = ../../../../Ellison/EliVertexBuffer.h; sourceTree = "<group>"; };
+		58C9E1E11D0F0F7C0059145B /* EliVertexSquareTLV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexSquareTLV.h; path = ../../../../Ellison/EliVertexSquareTLV.h; sourceTree = "<group>"; };
+		58C9E1E21D0F0F7C0059145B /* EliVertexTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexTypeDef.h; path = ../../../../Ellison/EliVertexTypeDef.h; sourceTree = "<group>"; };
+		58C9E1ED1D0F14AE0059145B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58C554851D0840B00091EC46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C9E1EE1D0F14AE0059145B /* AVFoundation.framework in Frameworks */,
+				58C9E1CF1D0F0D170059145B /* OpenAL.framework in Frameworks */,
+				58C9E1CD1D0F0D0D0059145B /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554A21D0840B00091EC46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554AD1D0840B00091EC46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		582EECDA1D0863B500997860 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				582EECDB1D08640A00997860 /* DalkStringMacro.cpp */,
+				582EECDC1D08640A00997860 /* DalkConfig.h */,
+				582EECDD1D08640A00997860 /* DalkErrorType.h */,
+				582EECDE1D08640A00997860 /* DalkExternalManager.h */,
+				582EECDF1D08640A00997860 /* DalkLocalizer_JP.h */,
+				582EECE01D08640A00997860 /* DalkStdio.h */,
+				582EECE11D08640A00997860 /* DalkString_iOS.h */,
+				582EECE21D08640A00997860 /* DalkStringMacro.h */,
+				582EECE31D08640A00997860 /* DalkTypeDef.h */,
+				582EECE41D08640A00997860 /* MultiStdAfx.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		58C5547F1D0840B00091EC46 = {
+			isa = PBXGroup;
+			children = (
+				58C9E1ED1D0F14AE0059145B /* AVFoundation.framework */,
+				58C9E1CE1D0F0D170059145B /* OpenAL.framework */,
+				58C9E1CC1D0F0D0D0059145B /* OpenGLES.framework */,
+				582EECDA1D0863B500997860 /* Core */,
+				58C5548A1D0840B00091EC46 /* Dalk */,
+				58C554A81D0840B00091EC46 /* DalkTests */,
+				58C554B31D0840B00091EC46 /* DalkUITests */,
+				58C9E1D01D0F0F5F0059145B /* Ellison */,
+				58C554891D0840B00091EC46 /* Products */,
+				58C554C21D0849AB0091EC46 /* Rimlia */,
+				58C9E1B11D0F098D0059145B /* Rinse */,
+				58C9E1C01D0F0AFD0059145B /* Siglune */,
+			);
+			sourceTree = "<group>";
+		};
+		58C554891D0840B00091EC46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58C554881D0840B00091EC46 /* Dalk.app */,
+				58C554A51D0840B00091EC46 /* DalkTests.xctest */,
+				58C554B01D0840B00091EC46 /* DalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58C5548A1D0840B00091EC46 /* Dalk */ = {
+			isa = PBXGroup;
+			children = (
+				58C5548E1D0840B00091EC46 /* AppDelegate.h */,
+				58C5548F1D0840B00091EC46 /* AppDelegate.m */,
+				58C554911D0840B00091EC46 /* Shader.fsh */,
+				58C554931D0840B00091EC46 /* Shader.vsh */,
+				58C554951D0840B00091EC46 /* GameViewController.h */,
+				58C554961D0840B00091EC46 /* GameViewController.m */,
+				58C554981D0840B00091EC46 /* Main.storyboard */,
+				58C5549B1D0840B00091EC46 /* Assets.xcassets */,
+				58C5549D1D0840B00091EC46 /* LaunchScreen.storyboard */,
+				58C554A01D0840B00091EC46 /* Info.plist */,
+				58C5548B1D0840B00091EC46 /* Supporting Files */,
+			);
+			path = Dalk;
+			sourceTree = "<group>";
+		};
+		58C5548B1D0840B00091EC46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58C5548C1D0840B00091EC46 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58C554A81D0840B00091EC46 /* DalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				58C554A91D0840B00091EC46 /* DalkTests.m */,
+				58C554AB1D0840B00091EC46 /* Info.plist */,
+			);
+			path = DalkTests;
+			sourceTree = "<group>";
+		};
+		58C554B31D0840B00091EC46 /* DalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				58C554B41D0840B00091EC46 /* DalkUITests.m */,
+				58C554B61D0840B00091EC46 /* Info.plist */,
+			);
+			path = DalkUITests;
+			sourceTree = "<group>";
+		};
+		58C554C21D0849AB0091EC46 /* Rimlia */ = {
+			isa = PBXGroup;
+			children = (
+				58C554C31D0849DB0091EC46 /* bmfont.cpp */,
+				58C554C41D0849DB0091EC46 /* bmfont.h */,
+				58C554C71D0849DB0091EC46 /* RimCGLoader.cpp */,
+				58C554C81D0849DB0091EC46 /* RimCGLoader.h */,
+				58C554CB1D0849DB0091EC46 /* RimCompressor.h */,
+				58C554CE1D0849DB0091EC46 /* RimDataStream.cpp */,
+				58C554CF1D0849DB0091EC46 /* RimDataStream.h */,
+				58C554D01D0849DB0091EC46 /* RimDDSLoader.cpp */,
+				58C554D11D0849DB0091EC46 /* RimDDSLoader.h */,
+				58C554D51D0849DB0091EC46 /* RimEventObject.h */,
+				58C554D61D0849DB0091EC46 /* RimExtAudioDecoder.cpp */,
+				58C554D71D0849DB0091EC46 /* RimExtAudioDecoder.h */,
+				58C554D81D0849DB0091EC46 /* RimFile.cpp */,
+				58C554D91D0849DB0091EC46 /* RimFile.h */,
+				58C554DA1D0849DB0091EC46 /* RimFileStream.cpp */,
+				58C554DB1D0849DB0091EC46 /* RimFileStream.h */,
+				58C554DC1D0849DB0091EC46 /* RimFont.cpp */,
+				58C554DD1D0849DB0091EC46 /* RimFont.h */,
+				58C554DE1D0849DB0091EC46 /* RimFreeType.h */,
+				58C554DF1D0849DB0091EC46 /* RimHeap.cpp */,
+				58C554E01D0849DB0091EC46 /* RimHeap.h */,
+				58C554E11D0849DB0091EC46 /* RimImageLoader.cpp */,
+				58C554E21D0849DB0091EC46 /* RimImageLoader.h */,
+				58C554E31D0849DB0091EC46 /* RimImageSaver.cpp */,
+				58C554E41D0849DB0091EC46 /* RimImageSaver.h */,
+				58C554E91D0849DB0091EC46 /* RimOggDecoder.cpp */,
+				58C554EA1D0849DB0091EC46 /* RimOggDecoder.h */,
+				58C554EB1D0849DB0091EC46 /* RimPNGLoader.cpp */,
+				58C554EC1D0849DB0091EC46 /* RimPNGLoader.h */,
+				58C554ED1D0849DB0091EC46 /* RimPSDLoader.h */,
+				58C554F01D0849DB0091EC46 /* RimRLECompressor.cpp */,
+				58C554F11D0849DB0091EC46 /* RimRLECompressor.h */,
+				58C554F21D0849DB0091EC46 /* RimSignal.h */,
+				58C554F31D0849DB0091EC46 /* RimSoundDecoder.cpp */,
+				58C554F41D0849DB0091EC46 /* RimSoundDecoder.h */,
+				58C554F51D0849DB0091EC46 /* RimSoundManager.cpp */,
+				58C554F61D0849DB0091EC46 /* RimSoundManager.h */,
+				58C554F71D0849DB0091EC46 /* RimSysInfo_iOS.cpp */,
+				58C554FA1D0849DB0091EC46 /* RimSysInfo.h */,
+				58C554FB1D0849DB0091EC46 /* RimThread.h */,
+				58C554FC1D0849DB0091EC46 /* RimTimer.cpp */,
+				58C554FD1D0849DB0091EC46 /* RimTimer.h */,
+				58C555001D0849DB0091EC46 /* RimTypeDef.h */,
+			);
+			name = Rimlia;
+			sourceTree = "<group>";
+		};
+		58C9E1B11D0F098D0059145B /* Rinse */ = {
+			isa = PBXGroup;
+			children = (
+				58C9E1B21D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp */,
+				58C9E1B41D0F09F90059145B /* RinseAudioDevice.h */,
+				58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */,
+				58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */,
+				58C9E1B71D0F09F90059145B /* RinseAudioSource.h */,
+				58C9E1BA1D0F09F90059145B /* RinseInitXAudio2.h */,
+			);
+			name = Rinse;
+			sourceTree = "<group>";
+		};
+		58C9E1C01D0F0AFD0059145B /* Siglune */ = {
+			isa = PBXGroup;
+			children = (
+				58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */,
+				58C9E1C21D0F0B370059145B /* SigDirect3DDevice.cpp */,
+				58C9E1C41D0F0B370059145B /* SigD3DX.h */,
+				58C9E1C51D0F0B370059145B /* SigDirect3D.h */,
+				58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */,
+				58C9E1C71D0F0B370059145B /* SigDirect3DInit.h */,
+			);
+			name = Siglune;
+			sourceTree = "<group>";
+		};
+		58C9E1D01D0F0F5F0059145B /* Ellison */ = {
+			isa = PBXGroup;
+			children = (
+				58C9E1D21D0F0F7C0059145B /* EliShader.cpp */,
+				58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */,
+				58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */,
+				58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */,
+				58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */,
+				58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */,
+				58C9E1DB1D0F0F7C0059145B /* EliCgShader.h */,
+				58C9E1DC1D0F0F7C0059145B /* EliMath.h */,
+				58C9E1DD1D0F0F7C0059145B /* EliShader.h */,
+				58C9E1DE1D0F0F7C0059145B /* EliSprite.h */,
+				58C9E1DF1D0F0F7C0059145B /* EliTexture.h */,
+				58C9E1E01D0F0F7C0059145B /* EliVertexBuffer.h */,
+				58C9E1E11D0F0F7C0059145B /* EliVertexSquareTLV.h */,
+				58C9E1E21D0F0F7C0059145B /* EliVertexTypeDef.h */,
+			);
+			name = Ellison;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58C554871D0840B00091EC46 /* Dalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C554B91D0840B00091EC46 /* Build configuration list for PBXNativeTarget "Dalk" */;
+			buildPhases = (
+				58C554841D0840B00091EC46 /* Sources */,
+				58C554851D0840B00091EC46 /* Frameworks */,
+				58C554861D0840B00091EC46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dalk;
+			productName = Dalk;
+			productReference = 58C554881D0840B00091EC46 /* Dalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58C554A41D0840B00091EC46 /* DalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C554BC1D0840B00091EC46 /* Build configuration list for PBXNativeTarget "DalkTests" */;
+			buildPhases = (
+				58C554A11D0840B00091EC46 /* Sources */,
+				58C554A21D0840B00091EC46 /* Frameworks */,
+				58C554A31D0840B00091EC46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58C554A71D0840B00091EC46 /* PBXTargetDependency */,
+			);
+			name = DalkTests;
+			productName = DalkTests;
+			productReference = 58C554A51D0840B00091EC46 /* DalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		58C554AF1D0840B00091EC46 /* DalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C554BF1D0840B00091EC46 /* Build configuration list for PBXNativeTarget "DalkUITests" */;
+			buildPhases = (
+				58C554AC1D0840B00091EC46 /* Sources */,
+				58C554AD1D0840B00091EC46 /* Frameworks */,
+				58C554AE1D0840B00091EC46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58C554B21D0840B00091EC46 /* PBXTargetDependency */,
+			);
+			name = DalkUITests;
+			productName = DalkUITests;
+			productReference = 58C554B01D0840B00091EC46 /* DalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58C554801D0840B00091EC46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = May.Watasumi;
+				TargetAttributes = {
+					58C554871D0840B00091EC46 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					58C554A41D0840B00091EC46 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 58C554871D0840B00091EC46;
+					};
+					58C554AF1D0840B00091EC46 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 58C554871D0840B00091EC46;
+					};
+				};
+			};
+			buildConfigurationList = 58C554831D0840B00091EC46 /* Build configuration list for PBXProject "Dalk" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58C5547F1D0840B00091EC46;
+			productRefGroup = 58C554891D0840B00091EC46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58C554871D0840B00091EC46 /* Dalk */,
+				58C554A41D0840B00091EC46 /* DalkTests */,
+				58C554AF1D0840B00091EC46 /* DalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58C554861D0840B00091EC46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C5549A1D0840B00091EC46 /* Main.storyboard in Resources */,
+				58C554941D0840B00091EC46 /* Shader.vsh in Resources */,
+				58C5549C1D0840B00091EC46 /* Assets.xcassets in Resources */,
+				58C5549F1D0840B00091EC46 /* LaunchScreen.storyboard in Resources */,
+				58C554921D0840B00091EC46 /* Shader.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554A31D0840B00091EC46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554AE1D0840B00091EC46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58C554841D0840B00091EC46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C9E1BD1D0F09F90059145B /* RinseAudioSource_Common.cpp in Sources */,
+				58C5550D1D0849DB0091EC46 /* RimFileStream.cpp in Sources */,
+				58C5551C1D0849DB0091EC46 /* RimTimer.cpp in Sources */,
+				58C9E1C91D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp in Sources */,
+				58C555181D0849DB0091EC46 /* RimSoundDecoder.cpp in Sources */,
+				58C554901D0840B00091EC46 /* AppDelegate.m in Sources */,
+				58C555191D0849DB0091EC46 /* RimSoundManager.cpp in Sources */,
+				58C5550F1D0849DB0091EC46 /* RimHeap.cpp in Sources */,
+				58C5550C1D0849DB0091EC46 /* RimFile.cpp in Sources */,
+				58C9E1E41D0F0F7C0059145B /* EliShader.cpp in Sources */,
+				58C555081D0849DB0091EC46 /* RimDataStream.cpp in Sources */,
+				58C555141D0849DB0091EC46 /* RimOggDecoder.cpp in Sources */,
+				58C9E1CA1D0F0B370059145B /* SigDirect3DDevice.cpp in Sources */,
+				58C555031D0849DB0091EC46 /* bmfont.cpp in Sources */,
+				58C555111D0849DB0091EC46 /* RimImageSaver.cpp in Sources */,
+				58C5551A1D0849DB0091EC46 /* RimSysInfo_iOS.cpp in Sources */,
+				58C9E1BE1D0F09F90059145B /* RinseAudioSource.cpp in Sources */,
+				58C555171D0849DB0091EC46 /* RimRLECompressor.cpp in Sources */,
+				58C555051D0849DB0091EC46 /* RimCGLoader.cpp in Sources */,
+				58C554971D0840B00091EC46 /* GameViewController.m in Sources */,
+				58C9E1E61D0F0F7C0059145B /* EliTexture_OpenGL.cpp in Sources */,
+				58C5550B1D0849DB0091EC46 /* RimExtAudioDecoder.cpp in Sources */,
+				58C5548D1D0840B00091EC46 /* main.m in Sources */,
+				58C9E1E51D0F0F7C0059145B /* EliSprite.cpp in Sources */,
+				582EECE51D08640A00997860 /* DalkStringMacro.cpp in Sources */,
+				58C555101D0849DB0091EC46 /* RimImageLoader.cpp in Sources */,
+				58C9E1E91D0F0F7C0059145B /* EliVertexTypeDef.cpp in Sources */,
+				58C9E1EA1D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp in Sources */,
+				58C5550E1D0849DB0091EC46 /* RimFont.cpp in Sources */,
+				58C555091D0849DB0091EC46 /* RimDDSLoader.cpp in Sources */,
+				58C9E1BB1D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp in Sources */,
+				58C9E1E81D0F0F7C0059145B /* EliVertexBuffer.cpp in Sources */,
+				58C555151D0849DB0091EC46 /* RimPNGLoader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554A11D0840B00091EC46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C554AA1D0840B00091EC46 /* DalkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C554AC1D0840B00091EC46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C554B51D0840B00091EC46 /* DalkUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58C554A71D0840B00091EC46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58C554871D0840B00091EC46 /* Dalk */;
+			targetProxy = 58C554A61D0840B00091EC46 /* PBXContainerItemProxy */;
+		};
+		58C554B21D0840B00091EC46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58C554871D0840B00091EC46 /* Dalk */;
+			targetProxy = 58C554B11D0840B00091EC46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58C554981D0840B00091EC46 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C554991D0840B00091EC46 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		58C5549D1D0840B00091EC46 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C5549E1D0840B00091EC46 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58C554B71D0840B00091EC46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58C554B81D0840B00091EC46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58C554BA1D0840B00091EC46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					$PROJECT_DIR/../../../../../,
+					$PROJECT_DIR/../../../../../External,
+					$PROJECT_DIR/../../../../../External/squirrel/incude,
+					"$PROJECT_DIR/../../../../../External/sqrat-0.9.2/incude",
+					"$PROJECT_DIR/../../../../../External/libogg-1.3.2/include",
+					../../../../,
+				);
+				INFOPLIST_FILE = Dalk/Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					_DALK_USE_OPENGL_,
+					_DALK_IOS_,
+					_DALK_USE_OPENAL_,
+					_DALK_DEBUG_BUILD_,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.Dalk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		58C554BB1D0840B00091EC46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					$PROJECT_DIR/../../../../../,
+					$PROJECT_DIR/../../../../../External,
+					$PROJECT_DIR/../../../../../External/squirrel/incude,
+					"$PROJECT_DIR/../../../../../External/sqrat-0.9.2/incude",
+					"$PROJECT_DIR/../../../../../External/libogg-1.3.2/include",
+					../../../../,
+				);
+				INFOPLIST_FILE = Dalk/Info.plist;
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = (
+					_DALK_USE_OPENGL_,
+					_DALK_IOS_,
+					_DALK_USE_OPENAL_,
+					_DALK_DEBUG_BUILD_,
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.Dalk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		58C554BD1D0840B00091EC46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.DalkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dalk.app/Dalk";
+			};
+			name = Debug;
+		};
+		58C554BE1D0840B00091EC46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.DalkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dalk.app/Dalk";
+			};
+			name = Release;
+		};
+		58C554C01D0840B00091EC46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.DalkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dalk;
+			};
+			name = Debug;
+		};
+		58C554C11D0840B00091EC46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Cybernetic-Cute.DalkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Dalk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58C554831D0840B00091EC46 /* Build configuration list for PBXProject "Dalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58C554B71D0840B00091EC46 /* Debug */,
+				58C554B81D0840B00091EC46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58C554B91D0840B00091EC46 /* Build configuration list for PBXNativeTarget "Dalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58C554BA1D0840B00091EC46 /* Debug */,
+				58C554BB1D0840B00091EC46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58C554BC1D0840B00091EC46 /* Build configuration list for PBXNativeTarget "DalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58C554BD1D0840B00091EC46 /* Debug */,
+				58C554BE1D0840B00091EC46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58C554BF1D0840B00091EC46 /* Build configuration list for PBXNativeTarget "DalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58C554C01D0840B00091EC46 /* Debug */,
+				58C554C11D0840B00091EC46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58C554801D0840B00091EC46 /* Project object */;
+}

@@ -1,0 +1,17 @@
+static const char* DefaultA8FragmentShader = _STRINGIFY(
+
+precision mediump float;
+
+varying lowp vec4 Varying_Color;
+varying mediump vec2 Varying_UV;
+
+uniform sampler2D texture0;
+ 
+void main()
+{
+	vec4 temp  =  texture2D(texture0, Varying_UV);
+	temp.rgb = Varying_Color.rgb;
+	//vec4 white = (1.0,1.0,1.0,1.0);
+	gl_FragColor = temp;//vec4( vec3(Varying_Color.rgb), temp.a );
+}
+);
