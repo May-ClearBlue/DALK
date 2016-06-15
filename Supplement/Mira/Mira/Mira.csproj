@@ -67,23 +67,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\ComponentsEx.cs" />
     <Compile Include="Source\ErrorManager.cs" />
     <Compile Include="Source\ExcelLoader.cs" />
     <Compile Include="Source\Expressior.cs" />
-    <Compile Include="Source\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\hpdf.cs" />
     <Compile Include="Source\ParserEx.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Source\RPNParser.cs" />
     <Compile Include="Source\ScriptGenerator.cs" />
     <Compile Include="Source\Variable.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
