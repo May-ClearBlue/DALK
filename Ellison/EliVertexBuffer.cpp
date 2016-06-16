@@ -1,5 +1,5 @@
-﻿#include "Multistdafx.h"
-#include "EliVertexBuffer.h"
+﻿#include <Multistdafx.h>
+#include <EliVertexBuffer.h>
 
 CVertexBuffer::CVertexBuffer() :
 	m_Num(-1),

@@ -45,7 +45,6 @@
 		58C9E1E41D0F0F7C0059145B /* EliShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D21D0F0F7C0059145B /* EliShader.cpp */; };
 		58C9E1E51D0F0F7C0059145B /* EliSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */; };
 		58C9E1E61D0F0F7C0059145B /* EliTexture_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */; };
-		58C9E1E81D0F0F7C0059145B /* EliVertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */; };
 		58C9E1E91D0F0F7C0059145B /* EliVertexTypeDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */; };
 		58C9E1EA1D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */; };
 		58C9E1EE1D0F14AE0059145B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C9E1ED1D0F14AE0059145B /* AVFoundation.framework */; };
@@ -70,32 +69,32 @@
 
 /* Begin PBXFileReference section */
 		582EECDB1D08640A00997860 /* DalkStringMacro.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = DalkStringMacro.cpp; path = ../../../../DalkStringMacro.cpp; sourceTree = "<group>"; };
-		582EECDC1D08640A00997860 /* DalkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkConfig.h; path = ../../../../DalkConfig.h; sourceTree = "<group>"; };
-		582EECDD1D08640A00997860 /* DalkErrorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkErrorType.h; path = ../../../../DalkErrorType.h; sourceTree = "<group>"; };
-		582EECDE1D08640A00997860 /* DalkExternalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkExternalManager.h; path = ../../../../DalkExternalManager.h; sourceTree = "<group>"; };
-		582EECDF1D08640A00997860 /* DalkLocalizer_JP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkLocalizer_JP.h; path = ../../../../DalkLocalizer_JP.h; sourceTree = "<group>"; };
-		582EECE01D08640A00997860 /* DalkStdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkStdio.h; path = ../../../../DalkStdio.h; sourceTree = "<group>"; };
-		582EECE11D08640A00997860 /* DalkString_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkString_iOS.h; path = ../../../../DalkString_iOS.h; sourceTree = "<group>"; };
-		582EECE21D08640A00997860 /* DalkStringMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkStringMacro.h; path = ../../../../DalkStringMacro.h; sourceTree = "<group>"; };
-		582EECE31D08640A00997860 /* DalkTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DalkTypeDef.h; path = ../../../../DalkTypeDef.h; sourceTree = "<group>"; };
-		582EECE41D08640A00997860 /* MultiStdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiStdAfx.h; path = ../../../../MultiStdAfx.h; sourceTree = "<group>"; };
+		582EECDC1D08640A00997860 /* DalkConfig.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkConfig.h; path = ../../../../DalkConfig.h; sourceTree = "<group>"; };
+		582EECDD1D08640A00997860 /* DalkErrorType.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkErrorType.h; path = ../../../../DalkErrorType.h; sourceTree = "<group>"; };
+		582EECDE1D08640A00997860 /* DalkExternalManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkExternalManager.h; path = ../../../../DalkExternalManager.h; sourceTree = "<group>"; };
+		582EECDF1D08640A00997860 /* DalkLocalizer_JP.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkLocalizer_JP.h; path = ../../../../DalkLocalizer_JP.h; sourceTree = "<group>"; };
+		582EECE01D08640A00997860 /* DalkStdio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkStdio.h; path = ../../../../DalkStdio.h; sourceTree = "<group>"; };
+		582EECE11D08640A00997860 /* DalkString_iOS.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkString_iOS.h; path = ../../../../DalkString_iOS.h; sourceTree = "<group>"; };
+		582EECE21D08640A00997860 /* DalkStringMacro.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkStringMacro.h; path = ../../../../DalkStringMacro.h; sourceTree = "<group>"; };
+		582EECE31D08640A00997860 /* DalkTypeDef.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = DalkTypeDef.h; path = ../../../../DalkTypeDef.h; sourceTree = "<group>"; };
+		582EECE41D08640A00997860 /* MultiStdAfx.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MultiStdAfx.h; path = ../../../../MultiStdAfx.h; sourceTree = "<group>"; };
 		58C554881D0840B00091EC46 /* Dalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5548C1D0840B00091EC46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		58C5548E1D0840B00091EC46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		58C5548F1D0840B00091EC46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58C5548E1D0840B00091EC46 /* AppDelegate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58C5548F1D0840B00091EC46 /* AppDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; path = AppDelegate.m; sourceTree = "<group>"; };
 		58C554911D0840B00091EC46 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		58C554931D0840B00091EC46 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		58C554951D0840B00091EC46 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		58C554961D0840B00091EC46 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		58C554951D0840B00091EC46 /* GameViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = GameViewController.h; sourceTree = "<group>"; };
+		58C554961D0840B00091EC46 /* GameViewController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; path = GameViewController.m; sourceTree = "<group>"; };
 		58C554991D0840B00091EC46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58C5549B1D0840B00091EC46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C5549E1D0840B00091EC46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C554A01D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C554A51D0840B00091EC46 /* DalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58C554A91D0840B00091EC46 /* DalkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DalkTests.m; sourceTree = "<group>"; };
+		58C554A91D0840B00091EC46 /* DalkTests.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; path = DalkTests.m; sourceTree = "<group>"; };
 		58C554AB1D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C554B01D0840B00091EC46 /* DalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58C554B41D0840B00091EC46 /* DalkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DalkUITests.m; sourceTree = "<group>"; };
+		58C554B41D0840B00091EC46 /* DalkUITests.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; path = DalkUITests.m; sourceTree = "<group>"; };
 		58C554B61D0840B00091EC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C554C31D0849DB0091EC46 /* bmfont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = bmfont.cpp; path = ../../../../Rimlia/bmfont.cpp; sourceTree = "<group>"; };
 		58C554C41D0849DB0091EC46 /* bmfont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bmfont.h; path = ../../../../Rimlia/bmfont.h; sourceTree = "<group>"; };
@@ -141,32 +140,30 @@
 		58C554FD1D0849DB0091EC46 /* RimTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimTimer.h; path = ../../../../Rimlia/RimTimer.h; sourceTree = "<group>"; };
 		58C555001D0849DB0091EC46 /* RimTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RimTypeDef.h; path = ../../../../Rimlia/RimTypeDef.h; sourceTree = "<group>"; };
 		58C9E1B21D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioDevice_OpenAL.cpp; path = ../../../../Rinse/RinseAudioDevice_OpenAL.cpp; sourceTree = "<group>"; };
-		58C9E1B41D0F09F90059145B /* RinseAudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseAudioDevice.h; path = ../../../../Users/swatty/Dropbox/Source/DALK/Rinse/RinseAudioDevice.h; sourceTree = DEVELOPER_DIR; };
 		58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioSource_Common.cpp; path = ../../../../Rinse/RinseAudioSource_Common.cpp; sourceTree = "<group>"; };
 		58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = RinseAudioSource.cpp; path = ../../../../Rinse/RinseAudioSource.cpp; sourceTree = "<group>"; };
-		58C9E1B71D0F09F90059145B /* RinseAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseAudioSource.h; path = ../../../../Rinse/RinseAudioSource.h; sourceTree = "<group>"; };
-		58C9E1BA1D0F09F90059145B /* RinseInitXAudio2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RinseInitXAudio2.h; path = ../../../../Rinse/RinseInitXAudio2.h; sourceTree = SOURCE_ROOT; };
+		58C9E1B71D0F09F90059145B /* RinseAudioSource.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RinseAudioSource.h; path = ../../../../Rinse/RinseAudioSource.h; sourceTree = "<group>"; };
+		58C9E1BA1D0F09F90059145B /* RinseInitXAudio2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RinseInitXAudio2.h; path = ../../../../Rinse/RinseInitXAudio2.h; sourceTree = SOURCE_ROOT; };
 		58C9E1C11D0F0B370059145B /* SigDirect3DDevice_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = SigDirect3DDevice_OpenGL.cpp; path = ../../../../Siglune/SigDirect3DDevice_OpenGL.cpp; sourceTree = "<group>"; };
-		58C9E1C41D0F0B370059145B /* SigD3DX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigD3DX.h; path = ../../../../Siglune/SigD3DX.h; sourceTree = "<group>"; };
-		58C9E1C51D0F0B370059145B /* SigDirect3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3D.h; path = ../../../../Siglune/SigDirect3D.h; sourceTree = "<group>"; };
-		58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3DDevice.h; path = ../../../../Siglune/SigDirect3DDevice.h; sourceTree = "<group>"; };
-		58C9E1C71D0F0B370059145B /* SigDirect3DInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SigDirect3DInit.h; path = ../../../../Siglune/SigDirect3DInit.h; sourceTree = "<group>"; };
+		58C9E1C41D0F0B370059145B /* SigD3DX.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SigD3DX.h; path = ../../../../Siglune/SigD3DX.h; sourceTree = "<group>"; };
+		58C9E1C51D0F0B370059145B /* SigDirect3D.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SigDirect3D.h; path = ../../../../Siglune/SigDirect3D.h; sourceTree = "<group>"; };
+		58C9E1C61D0F0B370059145B /* SigDirect3DDevice.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SigDirect3DDevice.h; path = ../../../../Siglune/SigDirect3DDevice.h; sourceTree = "<group>"; };
+		58C9E1C71D0F0B370059145B /* SigDirect3DInit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SigDirect3DInit.h; path = ../../../../Siglune/SigDirect3DInit.h; sourceTree = "<group>"; };
 		58C9E1CC1D0F0D0D0059145B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		58C9E1CE1D0F0D170059145B /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		58C9E1D21D0F0F7C0059145B /* EliShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliShader.cpp; path = ../../../../Ellison/EliShader.cpp; sourceTree = "<group>"; };
 		58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliSprite.cpp; path = ../../../../Ellison/EliSprite.cpp; sourceTree = "<group>"; };
 		58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliTexture_OpenGL.cpp; path = ../../../../Ellison/EliTexture_OpenGL.cpp; sourceTree = "<group>"; };
-		58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVertexBuffer.cpp; path = ../../../../Ellison/EliVertexBuffer.cpp; sourceTree = "<group>"; };
 		58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVertexTypeDef.cpp; path = ../../../../Ellison/EliVertexTypeDef.cpp; sourceTree = "<group>"; };
 		58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 4; name = EliVetexBuffer_OpenGL.cpp; path = ../../../../Ellison/EliVetexBuffer_OpenGL.cpp; sourceTree = "<group>"; };
-		58C9E1DB1D0F0F7C0059145B /* EliCgShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliCgShader.h; path = ../../../../Ellison/EliCgShader.h; sourceTree = "<group>"; };
-		58C9E1DC1D0F0F7C0059145B /* EliMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliMath.h; path = ../../../../Ellison/EliMath.h; sourceTree = "<group>"; };
-		58C9E1DD1D0F0F7C0059145B /* EliShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliShader.h; path = ../../../../Ellison/EliShader.h; sourceTree = "<group>"; };
-		58C9E1DE1D0F0F7C0059145B /* EliSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliSprite.h; path = ../../../../Ellison/EliSprite.h; sourceTree = "<group>"; };
-		58C9E1DF1D0F0F7C0059145B /* EliTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliTexture.h; path = ../../../../Ellison/EliTexture.h; sourceTree = SOURCE_ROOT; };
-		58C9E1E01D0F0F7C0059145B /* EliVertexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexBuffer.h; path = ../../../../Ellison/EliVertexBuffer.h; sourceTree = "<group>"; };
-		58C9E1E11D0F0F7C0059145B /* EliVertexSquareTLV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexSquareTLV.h; path = ../../../../Ellison/EliVertexSquareTLV.h; sourceTree = "<group>"; };
-		58C9E1E21D0F0F7C0059145B /* EliVertexTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EliVertexTypeDef.h; path = ../../../../Ellison/EliVertexTypeDef.h; sourceTree = "<group>"; };
+		58C9E1DB1D0F0F7C0059145B /* EliCgShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliCgShader.h; path = ../../../../Ellison/EliCgShader.h; sourceTree = "<group>"; };
+		58C9E1DC1D0F0F7C0059145B /* EliMath.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliMath.h; path = ../../../../Ellison/EliMath.h; sourceTree = "<group>"; };
+		58C9E1DD1D0F0F7C0059145B /* EliShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliShader.h; path = ../../../../Ellison/EliShader.h; sourceTree = "<group>"; };
+		58C9E1DE1D0F0F7C0059145B /* EliSprite.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliSprite.h; path = ../../../../Ellison/EliSprite.h; sourceTree = "<group>"; };
+		58C9E1DF1D0F0F7C0059145B /* EliTexture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliTexture.h; path = ../../../../Ellison/EliTexture.h; sourceTree = SOURCE_ROOT; };
+		58C9E1E01D0F0F7C0059145B /* EliVertexBuffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliVertexBuffer.h; path = ../../../../Ellison/EliVertexBuffer.h; sourceTree = "<group>"; };
+		58C9E1E11D0F0F7C0059145B /* EliVertexSquareTLV.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliVertexSquareTLV.h; path = ../../../../Ellison/EliVertexSquareTLV.h; sourceTree = "<group>"; };
+		58C9E1E21D0F0F7C0059145B /* EliVertexTypeDef.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = EliVertexTypeDef.h; path = ../../../../Ellison/EliVertexTypeDef.h; sourceTree = "<group>"; };
 		58C9E1ED1D0F14AE0059145B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -246,16 +243,16 @@
 		58C5548A1D0840B00091EC46 /* Dalk */ = {
 			isa = PBXGroup;
 			children = (
-				58C5548E1D0840B00091EC46 /* AppDelegate.h */,
-				58C5548F1D0840B00091EC46 /* AppDelegate.m */,
 				58C554911D0840B00091EC46 /* Shader.fsh */,
-				58C554931D0840B00091EC46 /* Shader.vsh */,
+				58C5548E1D0840B00091EC46 /* AppDelegate.h */,
 				58C554951D0840B00091EC46 /* GameViewController.h */,
+				58C5548F1D0840B00091EC46 /* AppDelegate.m */,
 				58C554961D0840B00091EC46 /* GameViewController.m */,
-				58C554981D0840B00091EC46 /* Main.storyboard */,
+				58C554A01D0840B00091EC46 /* Info.plist */,
+				58C554931D0840B00091EC46 /* Shader.vsh */,
 				58C5549B1D0840B00091EC46 /* Assets.xcassets */,
 				58C5549D1D0840B00091EC46 /* LaunchScreen.storyboard */,
-				58C554A01D0840B00091EC46 /* Info.plist */,
+				58C554981D0840B00091EC46 /* Main.storyboard */,
 				58C5548B1D0840B00091EC46 /* Supporting Files */,
 			);
 			path = Dalk;
@@ -341,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				58C9E1B21D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp */,
-				58C9E1B41D0F09F90059145B /* RinseAudioDevice.h */,
 				58C9E1B51D0F09F90059145B /* RinseAudioSource_Common.cpp */,
 				58C9E1B61D0F09F90059145B /* RinseAudioSource.cpp */,
 				58C9E1B71D0F09F90059145B /* RinseAudioSource.h */,
@@ -368,7 +364,6 @@
 				58C9E1D21D0F0F7C0059145B /* EliShader.cpp */,
 				58C9E1D31D0F0F7C0059145B /* EliSprite.cpp */,
 				58C9E1D41D0F0F7C0059145B /* EliTexture_OpenGL.cpp */,
-				58C9E1D61D0F0F7C0059145B /* EliVertexBuffer.cpp */,
 				58C9E1D71D0F0F7C0059145B /* EliVertexTypeDef.cpp */,
 				58C9E1D81D0F0F7C0059145B /* EliVetexBuffer_OpenGL.cpp */,
 				58C9E1DB1D0F0F7C0059145B /* EliCgShader.h */,
@@ -446,7 +441,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = May.Watasumi;
+				ORGANIZATIONNAME = CyberneticCute;
 				TargetAttributes = {
 					58C554871D0840B00091EC46 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -545,7 +540,6 @@
 				58C5550E1D0849DB0091EC46 /* RimFont.cpp in Sources */,
 				58C555091D0849DB0091EC46 /* RimDDSLoader.cpp in Sources */,
 				58C9E1BB1D0F09F90059145B /* RinseAudioDevice_OpenAL.cpp in Sources */,
-				58C9E1E81D0F0F7C0059145B /* EliVertexBuffer.cpp in Sources */,
 				58C555151D0849DB0091EC46 /* RimPNGLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +689,7 @@
 					_DALK_IOS_,
 					_DALK_USE_OPENGL_,
 					_DALK_USE_OPENAL_,
+					EIGEN_NO_STATIC_ASSERT,
 				);
 				HEADER_SEARCH_PATHS = (
 					$PROJECT_DIR/../../../../../,
@@ -718,6 +713,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_DALK_USE_OPENAL_,
+					_DALK_USE_OPENGL_,
+					_DALK_IOS_,
+					EIGEN_NO_STATIC_ASSERT,
+				);
 				HEADER_SEARCH_PATHS = (
 					$PROJECT_DIR/../../../../../,
 					$PROJECT_DIR/../../../../../External,
