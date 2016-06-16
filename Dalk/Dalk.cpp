@@ -1,6 +1,22 @@
 #include "MultiStdafx.h"
 #include "DALK.h"
 
+#if defined(_DALK_USE_DIRECT3D_)
+#define _DALK_INIT_3DDEVICE_ CDirect3D::Initialize()
+#define _DALK_RELEASE_3DDEVICE_ CDirect3D::Release()
+#elif defined(_DALK_USE_OPENGL_)
+#define _DALK_INIT_3DDEVICE_ CShaderManager::InitAllShader(APP_SCREEN_WIDTH, APP_SCREEN_HEIGHT)
+#define _DALK_RELEASE_3DDEVICE_ COpenGL::Release()
+#endif    
+
+#if defined(_DALK_USE_XAUDIO_)
+#define _DALK_INIT_AUDIODEVICE CXAudio2::Init()
+#define _DALK_RELEASE_AUDIODEVICE CXAudio2::Release()
+#elif defined(_DALK_USE_OPENAL_)
+#define _DALK_INIT_AUDIODEVICE COpenAL::Init()
+#define _DALK_RELEASE_AUDIODEVICE COpenAL::Release()
+#endif    
+
 void Dalk::Init(int width, int height) {
 	m_hWnd = NULL;
 
@@ -14,29 +30,21 @@ void Dalk::Init(int width, int height) {
 	CSpecialPath::Init();
 	CTimer::Initilaize();
 
-#if defined(_DALK_USE_DIRECT3D_)
-	CDirect3D::Initialize();
-#elif defined(_DALK_USE_OPENGL_)
-	CShaderManager::InitAllShader(APP_SCREEN_WIDTH, APP_SCREEN_HEIGHT);
-#endif    
-
-#if defined(_DALK_USE_XAUDIO_)
-	CXAudio2::Init();
-#elif defined(_DALK_USE_OPENAL_)
-	COpenAL::Init();
-#endif    
+	_DALK_INIT_3DDEVICE_;
+	_DALK_INIT_AUDIODEVICE;
 
 	m_Device.Initialize(m_hWnd, 0, 0, _DALK_APP_SCREEN_WIDTH_, _DALK_APP_SCREEN_HEIGHT_);
 	m_Device.Set2DCustom();
 
 	_DEBUG_HEAP_INFO();
-#if 0
-	m_RenderTexture.Create(_DALK_APP_SCREEN_WIDTH_, _DALK_APP_SCREEN_HEIGHT_, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, TRUE);
-	m_RenderSprite.SetTexture(&m_RenderTexture);
-#endif
 
 #if defined(_DALK_USE_SQUIRREL_)
 	InitSquirrel();
+#endif
+
+#if 0
+	m_RenderTexture.Create(_DALK_APP_SCREEN_WIDTH_, _DALK_APP_SCREEN_HEIGHT_, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, TRUE);
+	m_RenderSprite.SetTexture(&m_RenderTexture);
 #endif
 
 #if 0
@@ -102,21 +110,13 @@ DWORD Dalk::ShutDown()
 
 	m_Device.Release();
 	
-#if defined(_DALK_USE_DIRECT3D_)
-	CDirect3D::Release();
-#elif defined(_DALK_USE_OPENGL_)
-	COpenGL::Release();
-#endif    
-
-#if defined(_DALK_USE_XAUDIO_)
-	CXAudio2::Release();
-#elif defined(_DALK_USE_OPENAL_)
-	COpenAL::Release();
-#endif    
+	_DALK_RELEASE_3DDEVICE_;
+	_DALK_RELEASE_AUDIODEVICE;
 
 #ifdef _DALK_WINDOWS_
 	Destroy();
 #endif
+
 	return 0;
 }
 
@@ -178,6 +178,7 @@ void Dalk::Draw() {
 
 	}
 #endif
+
 #if defined (_DALK_IOS_)
 	CShader::ChangeShader(_SHADER_NOTEXTURE_);
 	for (int a = 0; a < 6; a++) {

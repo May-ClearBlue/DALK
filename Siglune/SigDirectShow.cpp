@@ -5,12 +5,71 @@
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "strmiids.lib")
 #define WM_GRAPHNOTIFY  WM_USER+13
-/*
-HRESULT MOVIEPLAYER8::PlayMovieInWindow(LPTSTR szFile,DWORD posx,DWORD posy,DWORD width,DWORD height){
+
+CMoviePlayer::CMoviePlayer() :
+pGB(NULL),
+pMC(NULL),
+pME(NULL),
+pVW(NULL),
+pBA(NULL),
+pBV(NULL),
+pMS(NULL),
+g_bAudioOnly(FALSE),
+g_lVolume(VOLUME_FULL),
+g_dwGraphRegister(0),
+g_psCurrent(Stopped)
+
+{ ; }
+
+BOOL CMoviePlayer::Open(LPCTSTR name, HWND hParentWnd) {
+// FilterGraphを生成
+//	::CoCreateInstanceEx
+	HRESULT _res;
+
+	if( SUCCEEDED( ::CoCreateInstance(CLSID_FilterGraph, NULL,	CLSCTX_INPROC_SERVER, IID_IGraphBuilder, (LPVOID*)&m_pGraphBuilder)) )
+	{
+		m_pGraphBuilder->QueryInterface(IID_IMediaControl, (LPVOID *)&m_pMediaControl); // Graphを生成
+		m_pGraphBuilder->QueryInterface(IID_IMediaEvent, (LPVOID *)&m_pMediaEvent);
+
+//		m_pMediaControl->RenderFile(FILENAME);
+		//	pMediaControl->RenderFile(FILENAME);
+		if ( hParentWnd != NULL )
+		{
+			m_pGraphBuilder->QueryInterface(IID_IVideoWindow, (LPVOID *)&m_pVideoWindow);
+			m_pVideoWindow->put_Owner((OAHWND)hParentWnd);
+			m_pVideoWindow->put_WindowStyle(WS_CHILD | WS_CLIPSIBLINGS);
+
+			RECT rect;
+			::GetClientRect(hParentWnd, &rect);
+			m_pVideoWindow->SetWindowPosition(0, 0, rect.right - rect.left, rect.bottom - rect.top);
+
+			m_hWnd = hParentWnd;
+		}
+	}
+
+	return TRUE;
+}
+
+void CMoviePlayer::Run()
+{
+	if (m_hWnd == NULL && m_pVideoWindow != NULL)
+	{
+		m_pVideoWindow->SetWindowForeground(OATRUE);
+		m_pVideoWindow->put_Visible(OATRUE);
+	}
+	m_pMediaControl->Run();
+}
+
+int CMoviePlayer::GetState(LONG _timeout)
+{
+	return m_pMediaControl->GetState(_timeout, NULL);
+}
+
+HRESULT CMoviePlayer::PlayMovieInWindow(HWND hWnd, LPTSTR szFile, DWORD posx, DWORD posy, DWORD width, DWORD height){
 	WCHAR wFile[MAX_PATH];
 
     // Clear open dialog remnants before calling RenderFile()
-    UpdateWindow(hwnd);
+    //UpdateWindow(hwnd);
 
 #ifndef UNICODE
     MultiByteToWideChar(CP_ACP, 0, szFile, -1, wFile, MAX_PATH);
@@ -40,19 +99,19 @@ HRESULT MOVIEPLAYER8::PlayMovieInWindow(LPTSTR szFile,DWORD posx,DWORD posy,DWOR
 	CheckVisibility();
 
 	if(!g_bAudioOnly){
-		pVW->put_Owner((OAHWND)hwnd);
+		pVW->put_Owner((OAHWND)hWnd);
 		pVW->put_WindowStyle(WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN);
 	}
 	// Have the graph signal event via window callbacks for performance
-	pME->SetNotifyWindow((OAHWND)hwnd, WM_GRAPHNOTIFY, 0);
+	pME->SetNotifyWindow((OAHWND)hWnd, WM_GRAPHNOTIFY, 0);
 
-	RECT rect;
-	GetClientRect(hwnd, &rect);
+//	RECT rect;
+//	GetClientRect(hwnd, &rect);
 
-	SetRECT2(&rect2,posx,posy,width,height);
+//	SetRECT2(&rect2,posx,posy,width,height);
 
-	pVW->SetWindowPosition(rect.left + posx, rect.top + posy, rect.left + width, rect.top + height);
-	pVW->put_MessageDrain( (OAHWND)hwnd );
+//	pVW->SetWindowPosition(rect.left + posx, rect.top + posy, rect.left + width, rect.top + height);
+	pVW->put_MessageDrain( (OAHWND)hWnd );
 
 	//メッセージをhwndに通知するように
 	// Let's get ready to rumble!
@@ -65,23 +124,26 @@ HRESULT MOVIEPLAYER8::PlayMovieInWindow(LPTSTR szFile,DWORD posx,DWORD posy,DWOR
 	// Run the graph to play the media file
 	pMC->Run();
 
-	ResetAllEvent();
+//	ResetAllEvent();
 	g_psCurrent=Running;
 
 	SetVolume(15);
 
-	while(::WaitForMultipleObjects(KEYEVENT_MAX,event,FALSE,100) == WAIT_TIMEOUT){
+//	while(::WaitForMultipleObjects(KEYEVENT_MAX,event,FALSE,100) == WAIT_TIMEOUT){
 		//HRESULT ddf = pVW->put_BorderColor(RGB(255,255,0) );
 		//InvalidateRect(hwnd,NULL,TRUE);
 		//::SendMessage(hwnd,WM_PAINT,0,0);
-	}
+//	}
 
 	//::SetWindowLong(hwnd,GWL_EXSTYLE,wexs);
 	//::SetWindowPos(hwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
+
+	m_hWnd = hWnd;
+
 	return hr;
 }
 
-HRESULT MOVIEPLAYER8::InitVideoWindow(int nMultiplier, int nDivider){
+HRESULT CMoviePlayer::InitVideoWindow(int nMultiplier, int nDivider){
 	LONG lHeight, lWidth;
 	hr = S_OK;
 	RECT rect;
@@ -96,7 +158,7 @@ HRESULT MOVIEPLAYER8::InitVideoWindow(int nMultiplier, int nDivider){
     lWidth  = lWidth  * nMultiplier / nDivider;
     lHeight = lHeight * nMultiplier / nDivider;
 
-    SetWindowPos(hwnd,NULL,0,0,lWidth,lHeight,SWP_NOMOVE | SWP_NOOWNERZORDER);
+    SetWindowPos(m_hWnd,NULL,0,0,lWidth,lHeight,SWP_NOMOVE | SWP_NOOWNERZORDER);
 
     int nTitleHeight  = GetSystemMetrics(SM_CYCAPTION);
     int nBorderWidth  = GetSystemMetrics(SM_CXBORDER);
@@ -104,14 +166,14 @@ HRESULT MOVIEPLAYER8::InitVideoWindow(int nMultiplier, int nDivider){
 
     // Account for size of title bar and borders for exact match
     // of window client area to default video size
-    SetWindowPos(hwnd, NULL, 0, 0, lWidth + 2*nBorderWidth,lHeight + nTitleHeight + 2*nBorderHeight,SWP_NOMOVE | SWP_NOOWNERZORDER);
+    SetWindowPos(m_hWnd, NULL, 0, 0, lWidth + 2*nBorderWidth,lHeight + nTitleHeight + 2*nBorderHeight,SWP_NOMOVE | SWP_NOOWNERZORDER);
 
-    GetClientRect(hwnd, &rect);
+    GetClientRect(m_hWnd, &rect);
     JIF(pVW->SetWindowPosition(rect.left, rect.top, rect.right, rect.bottom));
     return hr;
 }
 
-void MOVIEPLAYER8::SetVolume(double vol){
+void CMoviePlayer::SetVolume(double vol){
 	val = vol;
 	double v =  ( 20.0 * log10( val / 100.0 ) ) * 100.0;
 	if(v > 0.0)
@@ -121,23 +183,23 @@ void MOVIEPLAYER8::SetVolume(double vol){
 	pBA->put_Volume( (long) v);
 }
 
-HRESULT MOVIEPLAYER8::InitPlayerWindow(void){
+HRESULT CMoviePlayer::InitPlayerWindow(void){
 	// Reset to a default size for audio and after closing a clip
-	SetWindowPos(hwnd, NULL,0,0,DEFAULT_AUDIO_WIDTH,DEFAULT_AUDIO_HEIGHT,SWP_NOMOVE | SWP_NOOWNERZORDER);
+	SetWindowPos(m_hWnd, NULL,0,0,DEFAULT_AUDIO_WIDTH,DEFAULT_AUDIO_HEIGHT,SWP_NOMOVE | SWP_NOOWNERZORDER);
     return S_OK;
 }
 
-void MOVIEPLAYER8::MoveVideoWindow(void){
+void CMoviePlayer::MoveVideoWindow(void){
     // Track the movement of the container window and resize as needed
     if(pVW){
         RECT client;
 
-        GetClientRect(hwnd, &client);
+        GetClientRect(m_hWnd, &client);
         hr = pVW->SetWindowPosition(client.left,client.top,client.right,client.bottom);
     }
 }
 
-void MOVIEPLAYER8::CheckVisibility(void){
+void CMoviePlayer::CheckVisibility(void){
     long lVisible;
 
     g_bAudioOnly = FALSE;
@@ -160,7 +222,7 @@ void MOVIEPLAYER8::CheckVisibility(void){
     }
 }
 
-void MOVIEPLAYER8::PauseClip(void){
+void CMoviePlayer::PauseClip(void){
     if (!pMC)
         return;
 
@@ -176,7 +238,7 @@ void MOVIEPLAYER8::PauseClip(void){
     //UpdateMainTitle();
 }
 
-void MOVIEPLAYER8::StopClip(void){
+void CMoviePlayer::StopClip(void){
     if ((!pMC) || (!pMS))
         return;
 
@@ -194,7 +256,7 @@ void MOVIEPLAYER8::StopClip(void){
     }
 }
 
-void MOVIEPLAYER8::CloseClip(){
+void CMoviePlayer::CloseClip(){
     if(pMC)
         hr = pMC->Stop();
 
@@ -210,11 +272,11 @@ void MOVIEPLAYER8::CloseClip(){
     g_psCurrent = Initial;
 
     RECT rect;
-	::GetClientRect(hwnd, &rect);
-	::InvalidateRect(hwnd, &rect, TRUE);
+	::GetClientRect(m_hWnd, &rect);
+	::InvalidateRect(m_hWnd, &rect, TRUE);
 }
 
-void MOVIEPLAYER8::CloseInterfaces(void){
+void CMoviePlayer::CloseInterfaces(void){
     // Relinquish ownership (IMPORTANT!) after hiding video window
     if(pVW){
         hr = pVW->put_Visible(OAFALSE);
@@ -262,7 +324,7 @@ void MOVIEPLAYER8::RemoveGraphFromRot(DWORD pdwRegister){
 }
 #endif
 
-HRESULT MOVIEPLAYER8::ToggleMute(void){
+HRESULT CMoviePlayer::ToggleMute(void){
     hr = S_OK;
 
     if ((!pGB) || (!pBA))
@@ -288,7 +350,7 @@ HRESULT MOVIEPLAYER8::ToggleMute(void){
     return hr;
 }
 
-HRESULT MOVIEPLAYER8::ToggleFullScreen(void){
+HRESULT CMoviePlayer::ToggleFullScreen(void){
     hr = S_OK;
     LONG lMode;
     static HWND hDrain=0;
@@ -308,7 +370,7 @@ HRESULT MOVIEPLAYER8::ToggleFullScreen(void){
         LIF(pVW->get_MessageDrain((OAHWND *) &hDrain));
 
         // Set message drain to application main window
-        LIF(pVW->put_MessageDrain((OAHWND) hwnd));
+        LIF(pVW->put_MessageDrain((OAHWND) m_hWnd));
 
         // Switch to full-screen mode
         lMode = OATRUE;
@@ -328,14 +390,15 @@ HRESULT MOVIEPLAYER8::ToggleFullScreen(void){
 
 		// Reclaim keyboard focus for player application
 		// UpdateWindow(ghApp);
-		::SetForegroundWindow(hwnd);
-		::SetFocus(hwnd);
+		::SetForegroundWindow(m_hWnd);
+		::SetFocus(m_hWnd);
     }
     return hr;
 }
 
-HRESULT MOVIEPLAYER8::HandleGraphEvent(void){
-    LONG evCode, evParam1, evParam2;
+HRESULT CMoviePlayer::HandleGraphEvent(void){
+    LONG evCode;
+	LONG_PTR  evParam1, evParam2;
     hr = S_OK;
 
 	while(SUCCEEDED(pME->GetEvent(&evCode, &evParam1, &evParam2, 0))){
@@ -344,7 +407,7 @@ HRESULT MOVIEPLAYER8::HandleGraphEvent(void){
 
 		if(EC_COMPLETE == evCode){
             LONGLONG pos=0;
-			::SetEvent(event[KEY_RESERVED1]);
+//			::SetEvent(event[KEY_RESERVED1]);
 			return hr;
             // Reset to first frame of movie
         }
@@ -352,7 +415,7 @@ HRESULT MOVIEPLAYER8::HandleGraphEvent(void){
     return hr;
 }
 
-LRESULT MOVIEPLAYER8::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
+LRESULT CMoviePlayer::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
 	static PAINTSTRUCT ps;
 
 	switch(message){
@@ -383,26 +446,10 @@ LRESULT MOVIEPLAYER8::WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPa
 	case WM_SIZE:
 		if (!g_bAudioOnly && pVW){
 			RECT rect;
-			GetClientRect(hwnd, &rect);
-			pVW->SetWindowPosition(rect.left + rect2.left, rect.top + rect2.top, rect.left + rect2.width, rect.top + rect2.height);
-		}
+			::GetClientRect(m_hWnd, &rect);
+			pVW->SetWindowPosition(rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top);
 		return 1;
+		}
 	}
 	return 0;
 }
-
-MOVIEPLAYER8::MOVIEPLAYER8(){
-	pGB = NULL;
-	pMC = NULL;
-	pME = NULL;
-	pVW = NULL;
-	pBA = NULL;
-	pBV = NULL;
-	pMS = NULL;
-
-	g_bAudioOnly = FALSE;
-	g_lVolume = VOLUME_FULL;
-	g_dwGraphRegister = 0;
-	g_psCurrent = Stopped;
-}
-*/

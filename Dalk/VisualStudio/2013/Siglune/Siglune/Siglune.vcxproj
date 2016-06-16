@@ -170,7 +170,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Siglune\SigD3DX.h" />
     <ClInclude Include="..\..\..\..\..\Siglune\SigDirect3D.h" />
     <ClInclude Include="..\..\..\..\..\Siglune\SigDirect3DDevice.h" />
     <ClInclude Include="..\..\..\..\..\Siglune\SigDirect3DInit.h" />
