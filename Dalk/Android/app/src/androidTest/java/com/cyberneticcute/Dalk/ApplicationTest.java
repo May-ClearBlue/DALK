@@ -1,4 +1,4 @@
-package com.cyberneticcute.may_clearblue.dalk;
+package com.cyberneticcute.Dalk;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

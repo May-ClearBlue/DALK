@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define  LOG_TAG    "libgl2jni"
+#define  LOG_TAG    "libDalk"
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 
@@ -180,12 +180,10 @@ JNIEXPORT jstring JNICALL Java_com_CyberneticCute_Dalk_MainActivity_getMsgFromJn
     return env->NewStringUTF("Hello JNI");
 }
 
-JNIEXPORT void JNICALL Java_com_CyberneticCute_Dalk_MainActivity__init(JNIEnv *env, jclass type, jint width, jint height) {
+JNIEXPORT void JNICALL Java_com_CyberneticCute_Dalk_MainActivity_init(JNIEnv *env, jclass type, jint width, jint height) {
     setupGraphics(width, height);
-    // TODO
 }
 
-JNIEXPORT void JNICALL Java_com_CyberneticCute_Dalk_MainActivity__step(JNIEnv *env, jclass type) {
+JNIEXPORT void JNICALL Java_com_CyberneticCute_Dalk_MainActivity_step(JNIEnv *env, jclass type) {
     renderFrame();
-    // TODO
 }

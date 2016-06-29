@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.CyberneticCute.Dalk;
+package com.cyberneticcute.dalk;
 //package com.android.gl2jni;
 /*
  * Copyright (C) 2008 The Android Open Source Project
@@ -325,11 +325,11 @@ class GL2JNIView extends GLSurfaceView {
 
     private static class Renderer implements GLSurfaceView.Renderer {
         public void onDrawFrame(GL10 gl) {
-            com.CyberneticCute.Dalk.MainActivity.step();
+            com.cyberneticcute.dalk.MainActivity.step();
         }
 
         public void onSurfaceChanged(GL10 gl, int width, int height) {
-            com.CyberneticCute.Dalk.MainActivity.init(width, height);
+            com.cyberneticcute.dalk.MainActivity.init(width, height);
         }
 
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
