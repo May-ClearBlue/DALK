@@ -220,12 +220,12 @@ BOOL CShader::CreateShaderFromFile(const char* Ver, const char* Fl, SHADE_UNIFOR
 BOOL CShader::CreateShaderFromFile(NSString* Ver, NSString* Fl, SHADE_UNIFORM_ENUM format) {
 
 	NSString* path = [[NSBundle mainBundle] pathForResource:Ver ofType:nil];
-	NSString* temp = [NSString stringWithContentsOfFile:path];
+	NSString* temp = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 
 	const char* vfile = temp.UTF8String;
 
     path = [[NSBundle mainBundle] pathForResource:Fl ofType:nil];
-	NSString* temp2 = [NSString stringWithContentsOfFile:path];
+	NSString* temp2 = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 
 	const char* ffile = temp2.UTF8String;
 

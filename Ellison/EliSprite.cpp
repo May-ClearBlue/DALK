@@ -110,15 +110,15 @@ BOOL CSpriteBMFont::DrawChar(WORD code, float x, float y) {
 	_MATRIXIDENTITY(m_TransMatrix);
 
 	SetXYZ2D(x, y, (x + desc.XOffset + desc.Width), (y + desc.YOffset + desc.Height));
-   
+#if 0
 	float rf[4]  = {
         (float)desc.x  / (float)m_pTexture[desc.Page].GetWidth(),
         (float)desc.y / (float)m_pTexture[desc.Page].GetHeight(),
         (float)(desc.x + desc.Width) / (float)m_pTexture[desc.Page].GetWidth(),
         (float)(desc.y + desc.Height) / (float)m_pTexture[desc.Page].GetHeight()
     };
+#endif
 
-    
     SetUV((int)desc.x, (int)desc.y, desc.x + desc.Width, desc.y + desc.Height, m_pTexture[desc.Page].GetWidth(), m_pTexture[desc.Page].GetHeight());
 	SetDiffuse(1.0f, 1.0f, 1.0f, 1.0f);
 

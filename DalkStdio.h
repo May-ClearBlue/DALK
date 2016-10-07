@@ -103,7 +103,7 @@ inline void GetLocalTime(SYSTEMTIME* pSystemTime) {
 		NSDateComponents* comps;
 
 		// 年月日をとりだす
-		comps = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:date];
+		comps = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
 	/*
 		NSInteger year  = [comps year];
 		NSInteger month = [comps month];
@@ -116,7 +116,7 @@ inline void GetLocalTime(SYSTEMTIME* pSystemTime) {
 		//=> year: 2010 month: 5, day: 22
 
 		// 時分秒をとりだす
-		comps = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:date];
+		comps = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
 	/*
 		NSInteger hour = [comps hour];
 		NSInteger minute = [comps minute];
@@ -130,7 +130,7 @@ inline void GetLocalTime(SYSTEMTIME* pSystemTime) {
 		//=> hour: 18 minute: 24 second: 31
 
 		// 週や曜日などをとりだす
-		comps = [calendar components:(NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit) fromDate:date];
+		comps = [calendar components:(NSCalendarUnitWeekOfMonth| NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal) fromDate:date];
 	/*
 		NSInteger week = [comps week]; // 今年に入って何週目か
 		NSInteger weekday = [comps weekday]; // 曜日

@@ -68,7 +68,7 @@ public:
 		m_pStream(NULL),
 		m_pDecoder(NULL),
 		m_BufferSwitch(0)
-	  { _ZEROINIT(m_Buffers); }
+    { }
 protected:
 	_AUDIOSOURCE	m_SourceInstance;
 	AUDIO_STATE		m_State;

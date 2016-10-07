@@ -44,7 +44,7 @@
    #define GL_GLEXT_PROTOTYPES
    #include <glcorearb.h>
  #endif
- #include "SigD3DX.h"
+ #include "SigD3DBridge.h"
 #endif
 
 

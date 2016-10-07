@@ -137,9 +137,9 @@ int SavePNG(ISurfaceInfo& rInfo,int flag, LPCTSTR Name,BOOL isReversed) {
 	FILE		*fp;
 	png_structp	png_ptr;
 	png_infop	info_ptr;
-
+#if 0
 	errno_t _err = 0;
-
+#endif
     _FOPEN(fp, Name, _T("wb"));
     
 	if(fp == NULL)
@@ -178,7 +178,6 @@ int SavePNG(ISurfaceInfo& rInfo,int flag, LPCTSTR Name,BOOL isReversed) {
 		png_time	mod_time;
 		png_text	text_ptr[5];
 		char		text_time[29] = { 0 };
-
 
 		time(&gmt);
 		png_convert_from_time_t(&mod_time, gmt);
@@ -228,7 +227,7 @@ int SavePNG(ISurfaceInfo& rInfo,int flag, LPCTSTR Name,BOOL isReversed) {
 	png_destroy_write_struct(&png_ptr, &info_ptr);
 	fclose(fp);
 
-	delete pBuf;
+	delete[] pBuf;
 
 	return 0;
 }

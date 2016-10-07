@@ -56,8 +56,9 @@ int CXAudioSource::Load( LPCTSTR name, void* pData ) {
 	else if(ex == _T("ogg") || ex == _T("OGG") || ex == _T(".ogg") || ex == _T(".OGG") )
 		m_pDecoder = new CVorbisDecoder;
 
-	return m_pDecoder->SetStream(m_pStream);
-	SetVolume(1.0f);
+    SetVolume(1.0f);
+    
+    return m_pDecoder->SetStream(m_pStream);
 }
 
 #if defined(_DALK_USE_XAUDIO_)
@@ -218,7 +219,9 @@ _RINSERESULT CXAudioSource::Load(NSString* name, void* pData) {
 	m_pDecoder= new CExtAudioDecoder;
 
 	((CExtAudioStream*)m_pStream)->Open(name);
-	return m_pDecoder->SetStream(m_pStream);
-	SetVolume(1.0f);
+
+    SetVolume(1.0f);
+
+    return m_pDecoder->SetStream(m_pStream);
 }
 #endif

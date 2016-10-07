@@ -17,8 +17,9 @@ void CPNGLoader::pngread ( png_struct *png, png_bytep buf, png_size_t size ) {
 
 int CPNGLoader::LoadData( ISurfaceInfo& rPixel, IDataStream* pData, int malloc_method ) {
 	png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+    info_ptr = png_create_info_struct(png_ptr);
 
-	if( info_ptr = png_create_info_struct(png_ptr) ){
+    if(info_ptr != NULL) {
 		int bit_depth,num_palette = 0;;
 
 		png_set_read_fn( png_ptr, pData, pngread );

@@ -133,8 +133,9 @@ BOOL CSpecialPath::SetSaveDataPath() {
 //シミュレータの場所は	/Users/(ユーザ名)/Library/Application Support/iPhone Simulator/(シミュレータのバージョン)/Applications/(アプリケーションごとのGUID)/Documents
 
 	NSArray* paths;
-	NSString* path;
-
+#if 0
+    NSString* path;
+#endif
 //	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
 

@@ -27,7 +27,7 @@
 #endif
 
 #if defined(_DALK_USE_OPENGL_)
-#include <Siglune/SigD3DX.h>
+#include <Siglune/SigD3DBridge.h>
 #endif
 
 //π
