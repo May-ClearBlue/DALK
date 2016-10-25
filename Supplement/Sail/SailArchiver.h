@@ -1,4 +1,4 @@
-#ifndef _SAIL_ARCHIVER_
+Ôªø#ifndef _SAIL_ARCHIVER_
 #define _SAIL_ARCHIVER_
 
 
@@ -10,16 +10,16 @@
 
 #include <hash_map>
 
-//ÉtÉ@ÉCÉãç\ë¢
-// ÉwÉbÉ_(8byte)
-// ÉtÉ@ÉCÉãÉfÅ[É^...
-// ÉtÉ@ÉCÉãêî(size_t)
-// ÉCÉìÉtÉHÇÃìWäJëOÉTÉCÉY(int)
-// ÉCÉìÉtÉHÇÃìWäJå„ÉTÉCÉY(int)
-	//à≥èkçœÇ›ÉCÉìÉtÉHÉfÅ[É^
-	// |-ÉCÉìÉtÉHÇÃÉCÉìÉfÉbÉNÉXÅiint*ÉtÉ@ÉCÉãêîÅj
-	// |-ÉtÉ@ÉCÉãñºÇÃÉCÉìÉfÉbÉNÉXÅichar[]*ÉtÉ@ÉCÉãêîÅj
-// ÉfÅ[É^ññîˆÇÃÉIÉtÉZÉbÉg(int)
+//„Éï„Ç°„Ç§„É´ÊßãÈÄ†
+// „Éò„ÉÉ„ÉÄ(8byte)
+// „Éï„Ç°„Ç§„É´„Éá„Éº„Çø...
+// „Éï„Ç°„Ç§„É´Êï∞(size_t)
+// „Ç§„É≥„Éï„Ç©„ÅÆÂ±ïÈñãÂâç„Çµ„Ç§„Ç∫(int)
+// „Ç§„É≥„Éï„Ç©„ÅÆÂ±ïÈñãÂæå„Çµ„Ç§„Ç∫(int)
+	//ÂúßÁ∏ÆÊ∏à„Åø„Ç§„É≥„Éï„Ç©„Éá„Éº„Çø
+	// |-„Ç§„É≥„Éï„Ç©„ÅÆ„Ç§„É≥„Éá„ÉÉ„ÇØ„ÇπÔºàint*„Éï„Ç°„Ç§„É´Êï∞Ôºâ
+	// |-„Éï„Ç°„Ç§„É´Âêç„ÅÆ„Ç§„É≥„Éá„ÉÉ„ÇØ„ÇπÔºàchar[]*„Éï„Ç°„Ç§„É´Êï∞Ôºâ
+// „Éá„Éº„ÇøÊú´Â∞æ„ÅÆ„Ç™„Éï„Çª„ÉÉ„Éà(int)
 
 #define MARCID "MARC"			//ID							(4byte)
 
@@ -54,12 +54,12 @@ public:
 	int		Make	(LPCTSTR Name);
 };
 
-//édólïœçXÅFÉAÅ[ÉJÉCÉoÇªÇÃÇ‡ÇÃÇì«Ç›çûÇﬁéûÇÕïKÇ∏CloseÇµÇƒÉnÉìÉhÉãÇNULLÇ…ÇµÇƒÇ©ÇÁ
+//‰ªïÊßòÂ§âÊõ¥Ôºö„Ç¢„Éº„Ç´„Ç§„Éê„Åù„ÅÆ„ÇÇ„ÅÆ„ÇíË™≠„ÅøËæº„ÇÄÊôÇ„ÅØÂøÖ„ÅöClose„Åó„Å¶„Éè„É≥„Éâ„É´„ÇíNULL„Å´„Åó„Å¶„Åã„Çâ
 class CArchiver : public IDataStream {
 protected:
 	CFile		m_File;
-//int			currentnumber;			//åªç›ëÄçÏíÜÇÃÉiÉìÉoÅ[
-	int	m_FileNumber;		//ëçÉtÉ@ÉCÉãêî					(4byte)
+//int			currentnumber;			//ÁèæÂú®Êìç‰Ωú‰∏≠„ÅÆ„Éä„É≥„Éê„Éº
+	int	m_FileNumber;		//Á∑è„Éï„Ç°„Ç§„É´Êï∞					(4byte)
 
 	void*		m_pList;
 	SArcInfo*	m_pInfo;
@@ -76,7 +76,7 @@ public:
 
 	int		Open(LPCTSTR name);
 	DWORD	Seek(LONG offset,DWORD type);
-//ToDo:ÉãÅ[Évèàóù
+//ToDo:„É´„Éº„ÉóÂá¶ÁêÜ
 	DWORD 	Read(DWORD byte,void* pBuffer,bool bLoop)	{ return m_File.Read(byte,pBuffer); }
 	DWORD	Write(DWORD byte,void* pBuffer,bool bLoop)	{ return m_File.Write(byte,pBuffer); }
 	size_t	GetOffset()			{ return m_File.GetOffset() - (*hasher).second->Offset; }
@@ -112,7 +112,7 @@ public:
 	void	ThreadProc();
 };
 
-//ACHVÇ©ÇÁÉRÉsÅ[
+//ACHV„Åã„Çâ„Ç≥„Éî„Éº
 BOOL CopyFile3(ACHV& src,LPCTSTR lpExistingFileName,LPCTSTR lpNewFileName,BOOL bFailIfExists,HWND hfilesize = NULL,HWND htotalsize = NULL,HWND dialogwnd = NULL,HWND dialogparent = NULL);
 */
 

@@ -1,4 +1,4 @@
-// 手に持った機器本体の向き（ここではUIDeviceOrientationと同一）
+﻿// 手に持った機器本体の向き（ここではUIDeviceOrientationと同一）
 enum DeviceOrientation {
     DeviceOrientationUnknown,
     DeviceOrientationPortrait,

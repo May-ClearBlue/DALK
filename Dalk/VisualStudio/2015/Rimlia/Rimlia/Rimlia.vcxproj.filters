@@ -120,9 +120,6 @@
     <ClInclude Include="..\..\..\..\..\Rimlia\RimWindow.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\Rimlia\RimLZMACompressor.h">
-      <Filter>Compress</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\Rimlia\RimRLECompressor.h">
       <Filter>Compress</Filter>
     </ClInclude>
@@ -226,9 +223,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\Rimlia\RimWindow.cpp">
       <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Rimlia\RimLZMACompressor.cpp">
-      <Filter>Compress</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

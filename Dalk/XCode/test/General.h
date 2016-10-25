@@ -1,6 +1,6 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ï»¿/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  *  File	:	General.c
- *  Contents:	‹¤’Ê’è”ƒwƒbƒ_
+ *  Contents:	å…±é€šå®šæ•°ãƒ˜ãƒƒãƒ€
  *	Release	:	1997/07/01 		Nozomi		version 3.00
  *	UpDate	:	
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -9,25 +9,25 @@
 #define	_INC_GENERAL_
 
 /*--------------------------------------------------------------------------*/
-/*	ƒf[ƒ^Œ^éŒ¾															*/
+/*	ãƒ‡ãƒ¼ã‚¿å‹å®£è¨€															*/
 /*--------------------------------------------------------------------------*/
 
-//typedef				int		BOOL;	/* ˜_—Œ^i˜_—’è”‚ğ’l‚É‚Æ‚éj		*/
-//typedef	unsigned	int		UINT;	/* •„†‚È‚µINTŒ^iƒc[ƒ‹—pj		*/
-//typedef	signed		int		SINT;	/* •„†‚Â‚«INTŒ^iƒc[ƒ‹—pj		*/
-typedef	unsigned	char	UINT8;	/* •„†‚È‚µ‚PƒoƒCƒg®”				*/
-typedef	signed		char	SINT8;	/* •„†‚Â‚«‚PƒoƒCƒg®”				*/
-typedef	unsigned	short	UINT16;	/* •„†‚È‚µ‚QƒoƒCƒg®”				*/
-typedef	signed		short	SINT16;	/* •„†‚Â‚«‚QƒoƒCƒg®”				*/
-typedef	unsigned	long	UINT32;	/* •„†‚È‚µ‚SƒoƒCƒg®”				*/
-typedef	signed		long	SINT32;	/* •„†‚Â‚«‚SƒoƒCƒg®”				*/
+//typedef				int		BOOL;	/* è«–ç†å‹ï¼ˆè«–ç†å®šæ•°ã‚’å€¤ã«ã¨ã‚‹ï¼‰		*/
+//typedef	unsigned	int		UINT;	/* ç¬¦å·ãªã—INTå‹ï¼ˆãƒ„ãƒ¼ãƒ«ç”¨ï¼‰		*/
+//typedef	signed		int		SINT;	/* ç¬¦å·ã¤ãINTå‹ï¼ˆãƒ„ãƒ¼ãƒ«ç”¨ï¼‰		*/
+typedef	unsigned	char	UINT8;	/* ç¬¦å·ãªã—ï¼‘ãƒã‚¤ãƒˆæ•´æ•°				*/
+typedef	signed		char	SINT8;	/* ç¬¦å·ã¤ãï¼‘ãƒã‚¤ãƒˆæ•´æ•°				*/
+typedef	unsigned	short	UINT16;	/* ç¬¦å·ãªã—ï¼’ãƒã‚¤ãƒˆæ•´æ•°				*/
+typedef	signed		short	SINT16;	/* ç¬¦å·ã¤ãï¼’ãƒã‚¤ãƒˆæ•´æ•°				*/
+typedef	unsigned	long	UINT32;	/* ç¬¦å·ãªã—ï¼”ãƒã‚¤ãƒˆæ•´æ•°				*/
+typedef	signed		long	SINT32;	/* ç¬¦å·ã¤ãï¼”ãƒã‚¤ãƒˆæ•´æ•°				*/
 //typedef double		SINT64;
 
 #ifndef	NULL
-#define	NULL	((void *)0)			/* NULL ’è‹`						*/
+#define	NULL	((void *)0)			/* NULL å®šç¾©						*/
 #endif
-#define	FALSE	0	/* ˜_—’è”i‹Uj	*/
-#define	TRUE	1	/* ˜_—’è”i^j	*/
+#define	FALSE	0	/* è«–ç†å®šæ•°ï¼ˆå½ï¼‰	*/
+#define	TRUE	1	/* è«–ç†å®šæ•°ï¼ˆçœŸï¼‰	*/
 
 #define LF 0x0a
 #define CR 0x0d

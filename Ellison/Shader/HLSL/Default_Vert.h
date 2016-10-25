@@ -1,3 +1,3 @@
-static const char* DefaultVertexShader = _STRINGIFY(
+﻿static const char* DefaultVertexShader = _STRINGIFY(
 #include "Default.vert"
 );

@@ -1,10 +1,10 @@
-#include "Multistdafx.h"
+ï»¿#include "Multistdafx.h"
 
 #include "SailFPSManager.h"
 #pragma comment(lib,"winmm.lib")
 
 //======================================================
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 //======================================================
 CFPSManager::CFPSManager(DWORD dwFps, bool bFrameSkip) {
 	memset(this,0,sizeof(CFPSManager));
@@ -16,7 +16,7 @@ CFPSManager::CFPSManager(DWORD dwFps, bool bFrameSkip) {
 
 
 //======================================================
-//‚±‚±‚ÅŠÔ§Œä‚ğ‚µ‚Ü‚·B
+//ã“ã“ã§æ™‚é–“åˆ¶å¾¡ã‚’ã—ã¾ã™ã€‚
 //======================================================
 void CFPSManager::TimeRegular() {
 	m_dwFrameCount++;
@@ -35,10 +35,10 @@ void CFPSManager::TimeRegular() {
 	}
 	else {
 		//===========================================================
-		//€‚ÌˆÚ“®‚ğ‚µ‚½‚±‚Æ‚Å–³‘Ê‚È‰‰Z‚ğŒ¸‚ç‚µ‚Ü‚µ‚½B
-		//ğŒ			timeGetTime() - m_dwLastMinitues <= (DWORD)((m_dwFrameCount + 1) * m_fFrameTime)
-		//€‚ÌˆÚ“®		timeGetTime()  <= (DWORD)((m_dwFrameCount + 1) * m_fFrameTime) +  m_dwLastMinitues
-		//•Ï”’u‚«Š·‚¦	timeGetTime()@<= dwTime
+		//é …ã®ç§»å‹•ã‚’ã—ãŸã“ã¨ã§ç„¡é§„ãªæ¼”ç®—ã‚’æ¸›ã‚‰ã—ã¾ã—ãŸã€‚
+		//æ¡ä»¶			timeGetTime() - m_dwLastMinitues <= (DWORD)((m_dwFrameCount + 1) * m_fFrameTime)
+		//é …ã®ç§»å‹•		timeGetTime()  <= (DWORD)((m_dwFrameCount + 1) * m_fFrameTime) +  m_dwLastMinitues
+		//å¤‰æ•°ç½®ãæ›ãˆ	timeGetTime()ã€€<= dwTime
 		//===========================================================
 		DWORD dwTime = (DWORD)(m_dwFrameCount * m_fFrameTime + m_dwLastMinitues);
 
@@ -58,7 +58,7 @@ void CFPSManager::TimeRegular() {
 }
 
 //==================================================
-//Å‘åƒtƒŒ[ƒ€ƒŒ[ƒg‚ğ‘ª’è‚µ‚Ü‚·B
+//æœ€å¤§ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆã‚’æ¸¬å®šã—ã¾ã™ã€‚
 //==================================================
 void CFPSManager::Measure() {
 	m_dwFrameCount++;

@@ -1,10 +1,10 @@
-#ifndef _SAIL_USER_ACTION_
+Ôªø#ifndef _SAIL_USER_ACTION_
 #define _SAIL_USER_ACTION_
 
 #include <MultiStdAfx.h>
 
 enum DALK_DEVICE {
-	DEVICE_KEYBOARD,		//É}ÉEÉXÇ‡ä‹Çﬁ
+	DEVICE_KEYBOARD,		//„Éû„Ç¶„Çπ„ÇÇÂê´„ÇÄ
 	DEVICE_TOUCH,
 	DEVICE_ACTIVE,
 	DEVICE_PAD0,
@@ -132,7 +132,7 @@ void GetKeyBoardData() {
 	::GetKeyboardState(TempBuf);
 
 	for(int a = 0;a < ACTION_ADV_MAX;a ++) {
-//ToDo:NULLÉ`ÉFÉbÉN
+//ToDo:NULL„ÉÅ„Çß„ÉÉ„ÇØ
 		if(TempBuf[*m_ActionMap[a]] == 0) {
 			*m_ActionMap[a] = 0;
 		}

@@ -42,7 +42,6 @@
     <ClInclude Include="..\..\..\..\..\Rimlia\RimHeap.h" />
     <ClInclude Include="..\..\..\..\..\Rimlia\RimImageLoader.h" />
     <ClInclude Include="..\..\..\..\..\Rimlia\RimImageSaver.h" />
-    <ClInclude Include="..\..\..\..\..\Rimlia\RimLZMACompressor.h" />
     <ClInclude Include="..\..\..\..\..\Rimlia\RimNetWork.h" />
     <ClInclude Include="..\..\..\..\..\Rimlia\RimOggDecoder.h" />
     <ClInclude Include="..\..\..\..\..\Rimlia\RimPNGLoader.h" />
@@ -80,7 +79,6 @@
     <ClCompile Include="..\..\..\..\..\Rimlia\RimHeap.cpp" />
     <ClCompile Include="..\..\..\..\..\Rimlia\RimImageLoader.cpp" />
     <ClCompile Include="..\..\..\..\..\Rimlia\RimImageSaver.cpp" />
-    <ClCompile Include="..\..\..\..\..\Rimlia\RimLZMACompressor.cpp" />
     <ClCompile Include="..\..\..\..\..\Rimlia\RimNetWork.cpp" />
     <ClCompile Include="..\..\..\..\..\Rimlia\RimOggDecoder.cpp" />
     <ClCompile Include="..\..\..\..\..\Rimlia\RimPNGLoader.cpp" />

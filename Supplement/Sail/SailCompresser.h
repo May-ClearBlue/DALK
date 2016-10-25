@@ -1,4 +1,4 @@
-#ifndef _SAIL_LZO_
+ï»¿#ifndef _SAIL_LZO_
 #define _SAIL_LZO_
 
 #include "lzo/lzoconf.h"
@@ -12,8 +12,8 @@
 #include "Rimlia\RimHeap.h"
 
 class ICompress {
-//ˆ³kƒCƒ“ƒ^[ƒtƒF[ƒX
-//•Ô‚è’l‚Ídest‚ÌƒTƒCƒYF0ˆÈ‰º‚ÍƒGƒ‰[
+//åœ§ç¸®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
+//è¿”ã‚Šå€¤ã¯destã®ã‚µã‚¤ã‚ºï¼š0ä»¥ä¸‹ã¯ã‚¨ãƒ©ãƒ¼
 public:
 virtual	long_t Compress	(size_t src_size, const void* pSrc, size_t& dest_size,void*& dest_buf, bool bMalloc = false) = 0;
 virtual	long_t Decompress	(size_t src_size, const void* pSrc, size_t& dest_size,void*& dest_buf, bool bMalloc = false) = 0;

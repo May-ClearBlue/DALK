@@ -1,4 +1,4 @@
-#ifndef _SAIL_QUEBUFFER_
+﻿#ifndef _SAIL_QUEBUFFER_
 #define _SAIL_QUEBUFFER_
 
 #include "SailDataStream.h"

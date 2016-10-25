@@ -33,7 +33,7 @@ int CPNGLoader::LoadData( ISurfaceInfo& rPixel, IDataStream* pData, int malloc_m
 			break;
 		case 2://(Trueカラー / 8,16)
 			rPixel.Depth = 24;
-			//png_set_strip_16(png_ptr);//8bitｶﾗｰに落とす
+			//png_set_strip_16(png_ptr);//8bitカラーに落とす
 			break;
 		case 3://(インデックスカラー / 1,2,4,8) 
 			rPixel.Depth = 8;
@@ -54,7 +54,7 @@ int CPNGLoader::LoadData( ISurfaceInfo& rPixel, IDataStream* pData, int malloc_m
 			break;
 		case 6://6(αチャネルのある Trueカラー / 8,16) 
 			//αチャンネルは別途処理すること
-			//png_set_strip_16(png_ptr);//8bitｶﾗｰに落とす
+			//png_set_strip_16(png_ptr);//8bitカラーに落とす
 			rPixel.Depth = 32;
 		}
 
@@ -64,7 +64,7 @@ int CPNGLoader::LoadData( ISurfaceInfo& rPixel, IDataStream* pData, int malloc_m
 		//png_color_16p Trans16;
 		//png_get_tRNS(Png,Info,&Trans,&TransCount,&Trans16);
 
-		//取り出しﾀｲﾌﾟを設定
+		//取り出しタイプを設定
 		//png_read_update_info(png_ptr, info_ptr);
 
 		//WinはRGB逆転
@@ -77,7 +77,7 @@ int CPNGLoader::LoadData( ISurfaceInfo& rPixel, IDataStream* pData, int malloc_m
 			//png_set_filler(png_ptr, 0XFF, PNG_FILLER_BEFORE);
 		}
 
-		//読み込み(ｲﾝﾀｰﾚｰｽには未対応)
+		//読み込み(インターレースには未対応)
 		_VALLOC(rPixel.pData, rPixel.Y * rPixel.X * rPixel.Depth / 8 );
 		rPixel.Pitch = ( rPixel.X * rPixel.Depth / 8 );
 

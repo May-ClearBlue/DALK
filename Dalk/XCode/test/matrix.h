@@ -1,4 +1,4 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ï»¿/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  *  File	:	matrix.h
  *  Contents:	
  *	Release	:	2012/10/012		Nozomi		version 1.00
@@ -9,7 +9,7 @@
 
 
 /*
-‰^—p‚ÍˆÈ‰º‚Ìƒ}ƒgƒŠƒNƒX‚Æ‚µ‚Äˆµ‚¤
+é‹ç”¨æ™‚ã¯ä»¥ä¸‹ã®ãƒãƒˆãƒªã‚¯ã‚¹ã¨ã—ã¦æ‰±ã†
 |_11 _12 _13 _14|
 |_21 _22 _23 _24|
 |_31 _32 _33 _34|
@@ -58,17 +58,17 @@ float fSin(float rad);
 float fCos(float rad);
 
 /*
-’PˆÊs—ñ‚ğ¶¬
+å˜ä½è¡Œåˆ—ã‚’ç”Ÿæˆ
 */
 void MatrixIdentity(MATRIX4 *mat);
 
 /*
-‚QDƒ}ƒgƒŠƒbƒNƒX“¯m‚ÌÏ
+ï¼’ï¼ãƒãƒˆãƒªãƒƒã‚¯ã‚¹åŒå£«ã®ç©
 */
 void MatrixCalcMxM(MATRIX4 *dmat, MATRIX4 *smat1, MATRIX4 *smat2);
 
 /*
-‚PDƒxƒNƒgƒ‹‚Æƒ}ƒgƒŠƒbƒNƒX‚ÌÏ
+ï¼‘ï¼ãƒ™ã‚¯ãƒˆãƒ«ã¨ãƒãƒˆãƒªãƒƒã‚¯ã‚¹ã®ç©
 */
 void MatrixCalcVxM(VECTOR4 *dvec, VECTOR4 *svec, MATRIX4 *smat);
 void MatrixCalcVxM2(VECTOR4 *dvec, VECTOR4 *svec, MATRIX4 *smat);
@@ -78,13 +78,13 @@ void MatrixCopyM(MATRIX4 *dmat, MATRIX4 *smat);
 void MatrixCopyV(VECTOR4 *dvec, VECTOR4 *svec);
 
 /*
-¡•½sˆÚ“®
+â– å¹³è¡Œç§»å‹•
 */
 void MatrixSetMove(MATRIX4 *dmat, float x, float y, float z);
 
 
 /*
-¡‰ñ“]s—ñ
+â– å›è»¢è¡Œåˆ—
 */
 void MatrixSetRotateX(MATRIX4 *dmat, float rad);
 
@@ -93,17 +93,17 @@ void MatrixSetRotateX(MATRIX4 *dmat, float rad);
 void MatrixSetRotateY(MATRIX4 *dmat, float rad);
 
 /*
-‚RD‚y²‚Å‰ñ“]
+ï¼“ï¼ï¼ºè»¸ã§å›è»¢
 */
 void MatrixSetRotateZ(MATRIX4 *dmat, float rad);
 
 /*
-‚R²‰ñ“]	Z->X->Y
+ï¼“è»¸å›è»¢	Z->X->Y
 */
 void MatrixRotationYawPitchRoll(MATRIX4 *dmat, float x, float y, float z);
 
 /*
-¡ƒXƒP[ƒŠƒ“ƒO
+â– ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°
 */
 void MatrixStretch(MATRIX4 *dmat, float sizex, float sizey, float sizez);
 

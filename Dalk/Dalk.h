@@ -1,4 +1,4 @@
-#ifndef _DALK_APPMAIN_
+﻿#ifndef _DALK_APPMAIN_
 #define _DALK_APPMAIN_
 
 #ifndef _DALK_APP_SCREEN_WIDTH_

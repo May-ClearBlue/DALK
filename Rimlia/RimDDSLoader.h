@@ -3,7 +3,7 @@
 
 #include "RimCGLoader.h"
 
-#include "Squish-1.11/squish.h"
+#include "squish/squish.h"
 
 struct DDSHEADER {
 public:

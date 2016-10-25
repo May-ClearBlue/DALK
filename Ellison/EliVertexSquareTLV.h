@@ -8,8 +8,8 @@
 class CVertexSquareTLV : public CVertexSquare<TLVERTEX, VX_PTL0>  {
 public:
 CVertexSquareTLV(){;}
-//(左上－右上－左下－右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
-//(左上－左下－右上－右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
+//(左上−右上−左下−右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
+//(左上−左下−右上−右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
 //※OpenGLとDirectXでテクスチャのY軸は逆
 //D3D:上が0、下がが1.0
 //GL:下が0、上が1.0
@@ -34,8 +34,8 @@ class CVertexSquareTLV2 : public CVertexSquare<TLVERTEX2, VX_PTL1>   {
 public:
 CVertexSquareTLV2(){;}
 
-//(左上－右上－左下－右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
-//(左上－左下－右上－右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
+//(左上−右上−左下−右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
+//(左上−左下−右上−右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
 //※OpenGLとDirectXでテクスチャのY軸は逆
 //D3D:上が0、下がが1.0
 //GL:下が0、上が1.0

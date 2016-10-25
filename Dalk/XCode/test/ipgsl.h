@@ -1,6 +1,6 @@
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ï»¿/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  *  File	:	ipgsl.h
- *  Contents:	iPhone ƒAƒvƒŠ—pGSLƒ‰ƒCƒuƒ‰ƒŠ
+ *  Contents:	iPhone ã‚¢ãƒ—ãƒªç”¨GSLãƒ©ã‚¤ãƒ–ãƒ©ãƒª
  *	Release	:	2012/10/012		Nozomi		version 1.00
  *	UpDate	:
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -72,7 +72,7 @@ typedef struct tagSURF
 
 extern	SURF	STable[SURFMAX];
 
-extern	float	frontMaskY;	// ã‰º‚Ì16:9‚Ì‰æ–ÊŠOƒ}ƒXƒNƒTƒCƒY
+extern	float	frontMaskY;	// ä¸Šä¸‹ã®16:9ã®ç”»é¢å¤–ãƒã‚¹ã‚¯ã‚µã‚¤ã‚º
 extern	float	viewofsYL;
 extern	float	viewXL, viewYL;	// View Projection Landscape
 extern	float	viewXP, viewYP;	// View Projection Portrait
@@ -104,7 +104,7 @@ void GSLresetTexture();
 
 
 /*
-	w’è‚³‚ê‚½ƒtƒ@ƒCƒ‹–¼‚Ìpng‚ğƒeƒNƒXƒ`ƒƒ[‚É“Ç‚İ‚Ş
+	æŒ‡å®šã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«åã®pngã‚’ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ¼ã«èª­ã¿è¾¼ã‚€
 */
 BOOL GSLloadTexture(UINT32 sno, NSString *fname);
 

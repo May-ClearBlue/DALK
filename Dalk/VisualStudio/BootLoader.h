@@ -1,5 +1,5 @@
-#pragma once
+﻿#pragma once
 
 #include "resource.h"
 
-#include <Dalk\Dalk.h>
+#include <Dalk/Dalk.h>

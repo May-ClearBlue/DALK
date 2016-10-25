@@ -1,4 +1,4 @@
-// Dalk.cpp : Defines the entry point for the application.
+ï»¿// Dalk.cpp : Defines the entry point for the application.
 //
 
 #include "Multistdafx.h"
@@ -7,7 +7,7 @@
 #define MAX_LOADSTRING 100
 
 // Global Variables:
-// ƒOƒ[ƒoƒ‹•Ï”:
+// ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°:
 HANDLE hMutex;
 HINSTANCE hInst;
 TCHAR szTitle[MAX_LOADSTRING];					// The title bar text

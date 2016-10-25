@@ -1,4 +1,4 @@
-#include "MultiStdAfx.h"
+ï»¿#include "MultiStdAfx.h"
 
 #include "SailArchiver.h"
 
@@ -66,10 +66,10 @@ int CArcMaker::Make(LPCTSTR Name){
 		}while(ReadSize != 0);	
 	}
 
-	//ƒIƒtƒZƒbƒg‚ğ•Û‘¶
+	//ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’ä¿å­˜
 	size_t NameListOffset = OutFile.GetOffset();
 
-	//ƒtƒ@ƒCƒ‹”
+	//ãƒ•ã‚¡ã‚¤ãƒ«æ•°
 	OutFile.Write(m_InfoData.size());
 
 	size_t infosize = sizeof(SArcInfo) * m_InfoData.size();
@@ -99,13 +99,13 @@ int CArcMaker::Make(LPCTSTR Name){
 
 	lzo.Compress(infosize, data, dest, pDest);
 
-	//ˆ³k‘OƒTƒCƒY
+	//åœ§ç¸®å‰ã‚µã‚¤ã‚º
 	OutFile.Write(infosize);
-	//ˆ³kŒãƒTƒCƒY
+	//åœ§ç¸®å¾Œã‚µã‚¤ã‚º
 	OutFile.Write(dest);
-	//ˆ³kƒf[ƒ^
+	//åœ§ç¸®ãƒ‡ãƒ¼ã‚¿
 	OutFile.Write(dest, pDest);
-	//ƒtƒ@ƒCƒ‹––”öƒIƒtƒZƒbƒg
+	//ãƒ•ã‚¡ã‚¤ãƒ«æœ«å°¾ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	OutFile.Write(NameListOffset);
 
 	_VFREE(data);
@@ -242,7 +242,7 @@ DWORD CArchiver::MovePointer(LONG address,DWORD type,LONG *addresshigh){
 int CArchiver::Init(LPCTSTR name){
 	int res;
 
-	//ƒI[ƒvƒ“Ï‚İ‚Ìê‡‚Í“à•”‚ğŒŸõ
+	//ã‚ªãƒ¼ãƒ—ãƒ³æ¸ˆã¿ã®å ´åˆã¯å†…éƒ¨ã‚’æ¤œç´¢
 	//if(handle)
 	//	return (SetFilePointer(Name) != INVALID_SET_FILE_POINTER) ? 0 : 5;
 
@@ -295,7 +295,7 @@ int CArchiver::Init(LPCTSTR name){
 	m_pInfo		= (SArcInfo*)m_pList;
 	m_pFileList	= (LPCTSTR)(m_pInfo + m_FileNumber);
 
-	//VC‚Ìhash_map‚É‚Í‚È‚¢	
+	//VCã®hash_mapã«ã¯ãªã„	
 #if 0
 	nametable.resize(m_Header.FileNumber);
 #endif	
@@ -342,7 +342,7 @@ BOOL CopyFile3(ACHV& src,LPCTSTR lpExistingFileName,LPCTSTR lpNewFileName,BOOL b
 
 	if( src.Open(lpExistingFileName) ){
 		errormes = lpExistingFileName;
-		errormes += "‚ğƒI[ƒvƒ“‚Å‚«‚Ü‚¹‚ñ";
+		errormes += "ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã§ãã¾ã›ã‚“";
 		ErrorOK( errormes.data() );
 		return FALSE;
 	}
@@ -354,7 +354,7 @@ BOOL CopyFile3(ACHV& src,LPCTSTR lpExistingFileName,LPCTSTR lpNewFileName,BOOL b
 
 	if( dest.Create(lpNewFileName,bFailIfExists) ){
 		errormes = lpNewFileName;
-		errormes += "‚ğì¬‚Å‚«‚Ü‚¹‚ñ";
+		errormes += "ã‚’ä½œæˆã§ãã¾ã›ã‚“";
 		ErrorOK( errormes.data() );
 		src.Close();
 		return FALSE;
@@ -423,7 +423,7 @@ void ACHVCOPY::ThreadProc(){
 
 	if( src->Open( lpExistingFileName.data() ) ){
 		errormes = lpExistingFileName;
-		errormes += "‚ğƒI[ƒvƒ“‚Å‚«‚Ü‚¹‚ñ";
+		errormes += "ã‚’ã‚ªãƒ¼ãƒ—ãƒ³ã§ãã¾ã›ã‚“";
 		ErrorOK( errormes.data() );
 		return;
 	}
@@ -435,7 +435,7 @@ void ACHVCOPY::ThreadProc(){
 
 	if( dest.Create( lpNewFileName.data(),bFailIfExists ) ){
 		errormes = lpNewFileName;
-		errormes += "‚ğì¬‚Å‚«‚Ü‚¹‚ñ";
+		errormes += "ã‚’ä½œæˆã§ãã¾ã›ã‚“";
 		ErrorOK( errormes.data() );
 		//src.Close();
 		return;// FALSE;

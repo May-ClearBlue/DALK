@@ -2,7 +2,7 @@
 #define _PNGLOADER_
 
 #include "RimCGLoader.h"
-#include "lpng1625/png.h"
+#include "libpng/png.h"
 
 class CPNGLoader : public ICGLoaderBase {
 protected:

@@ -267,7 +267,7 @@ inline void SetVertexPointer(VERTEX_TYPE type, void* pPointer) {
 }; //namespace EliVertex
 
 
-//2Dポリゴンのテンプレ－ト
+//2Dポリゴンのテンプレ−ト
 template<typename T, VERTEX_TYPE U> class CVertexSquare {
 public:
 	CVertexSquare() : m_VertexType(U) { ; };
@@ -278,8 +278,8 @@ public:
 inline	const VERTEX_TYPE	GetVertexType()	{ return m_VertexType; }
 inline	T*					GetArray()		{ return _Vertex; }
 
-//(左上－右上－左下－右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
-//(左上－左下－右上－右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
+//(左上−右上−左下−右下）//右回り：D3D D3DCULL_CCW：Ｚ字)
+//(左上−左下−右上−右下）//左回り：GL D3DCULL_CW)：逆Ｎ字
 inline void SetXYZ(float left, float top, float right, float bottom, float z = 0.0f) {
 #if defined(_DALK_WINDOWS_)
 enum { _LU, _RU, _LD, _RD };

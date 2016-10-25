@@ -1,4 +1,4 @@
-#ifndef _SAIL_VOLUME_MANAGER_
+ï»¿#ifndef _SAIL_VOLUME_MANAGER_
 #define _SAIL_VOLUME_MANAGER_
 
 #include "MultyStdafx.h"
@@ -7,7 +7,7 @@
 #include <math.h>
 #include <process.h> 
 
-//ƒfƒVƒxƒ‹•ÏŠ·
+//ãƒ‡ã‚·ãƒ™ãƒ«å¤‰æ›
 inline double percent2decibel(double percent){
 	double res =  ( 20.0 * log10( percent / 100.0 ) ) * 100.0;
 	if(res > 0.0)
@@ -19,8 +19,8 @@ inline double percent2decibel(double percent){
 
 class CVolumeManager:public CThread {
 protected:
-		double		m_Volume;	// 0`100‚Ì”ÍˆÍ‚ÅüŒ`“I‚Éw’è‚·‚é’l
-		double		m_Volume2;	//ƒtƒF[ƒh—pA’¼Úƒ†[ƒU[‚Í‚¢‚¶‚ç‚È‚¢‚±‚ÆB
+		double		m_Volume;	// 0ã€œ100ã®ç¯„å›²ã§ç·šå½¢çš„ã«æŒ‡å®šã™ã‚‹å€¤
+		double		m_Volume2;	//ãƒ•ã‚§ãƒ¼ãƒ‰ç”¨ã€ç›´æ¥ãƒ¦ãƒ¼ã‚¶ãƒ¼ã¯ã„ã˜ã‚‰ãªã„ã“ã¨ã€‚
 		CDirectSoundBuffer*	m_pBuffer;
 public:
 	void		SetBuffer	(CDirectSoundBuffer* pBuffer){ m_pBuffer = pBuffer; }
