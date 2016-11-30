@@ -218,25 +218,6 @@ template <class P>inline BOOL HeapFree( P* &pAddress ) {
 }
 #endif
 
-    
-#if defined(_DALK_PS3_) 
-//EASTLをデバッグ、かつスタティックリンクする場合↓のnewのオーバーライドを実装する必要あり。たぶんデバッグ用
-
-#if !EASTL_DLL
-		// If building a regular library and not building EASTL as a DLL...
-	    // It is expected that the application define the following
-        // versions of operator new for the application. Either that or the
-        // user needs to override the implementation of the allocator class.
-inline void* operator new[](size_t size, const char* pName, int flags, unsigned debugFlags, const char* file, int line){
-	return malloc(size);
-}
-
-inline void* operator new[](size_t size, size_t alignment, size_t alignmentOffset, const char* pName, int flags, unsigned debugFlags, const char* file, int line) {
-	return MemAlloc(size);
-}
-#endif
-#endif
-
 #if defined( _DALK_DEBUG_BUILD_) || defined(_DALK_TEST_)
 inline void* _GALLOC(size_t a)
 {

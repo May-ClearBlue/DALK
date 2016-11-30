@@ -75,7 +75,7 @@ inline	size_t		GetTotalSize()		{ return m_TotalFrame * _PCM_BITS(m_DestFormat) /
 inline	_PCMFORMAT& GetSourceFormat()	{ return m_SourceFormat; }
 inline	_PCMFORMAT& GetDestFormat()		{ return m_DestFormat; }
 virtual	float		TellTime()			{ return (float)TellFrame() / (float)_PCM_SAMPLERATE(m_DestFormat); }
-virtual int			SeekTime(float time){ return SeekFrame( time * _PCM_SAMPLERATE(m_DestFormat) ); }
+virtual int			SeekTime(float time){ return SeekFrame( (int)time * _PCM_SAMPLERATE(m_DestFormat) ); }
 virtual	size_t		TellFrame() = 0;
 virtual int			SeekFrame(size_t frame) = 0;
 virtual	int			SetStream		( void* pStream = NULL ) = 0;

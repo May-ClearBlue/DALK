@@ -82,13 +82,7 @@ typedef struct _SYSTEMTIME {
 } SYSTEMTIME;
 
 
-#if defined(_DALK_PS3_)
- #include <sys/timer.h>
- //Win側はミリ秒なのでPS3のマイクロ秒と一致させる
- #define _SLEEP(x) sys_timer_usleep(x*1000)
- #define _GETSYSTEMTIME() sys_time_get_system_time()
-
-#elif defined(_DALK_IOS_)
+#if defined(_DALK_IOS_)
  #import <UIKit/UIKit.h>
  #define FAILED(r) (r != 0)
  #define _FUNC_NAME __PRETTY_FUNCTION__
@@ -153,13 +147,7 @@ inline void GetLocalTime(SYSTEMTIME* pSystemTime) {
 #define _ZEROINITPTR(x,y)	memset(x,0,y);
 
 //DEBUGPRINTF
-#if defined(_DALK_PS3_)
- #ifdef _DEBUG
-  #define _DEBUGPRINTF(...) printf(__VA_ARGS__)
- #else
-  #define _DEBUGPRINTF(...)
- #endif
-#elif defined(_DALK_IOS_)
+#if defined(_DALK_IOS_)
  #ifdef DEBUG
 //    NSString* _temp_ = [NSString stringWithCString: fmt encoding:NSUTF8StringEncoding];
   #define _DEBUGPRINTF(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)

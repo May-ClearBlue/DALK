@@ -11,24 +11,6 @@ BOOL CDirectInput::Initialize ( HINSTANCE hInstance ) {
 		return TRUE;
 	return FALSE;
 #endif
-
-#ifdef _SAIL_TARGET_PS3_
-//CELL_PAD_ERROR_INVALID_PARAMETER  パラメータの設定値が不正
-//CELL_PAD_ERROR_ALREADY_INITIALIZED 既に初期化済み(初回時のリソースは継続されます)
-//CELL_PAD_ERROR_RESOURCE_ALLOCATION_FAILED リソースの確保に失敗した
-
-	DWORD num = 1;
-	if(hInstance != NULL)
-		num = _SIG_PAD_MAX_CONNECT_;
-
-	int32_t res = cellPadInit(num);
-
-	if(res == CELL_PAD_OK)
-		return true;
-
-	return false;
-
-#endif
 }
 
 BOOL CDirectInput::Release() {
@@ -185,10 +167,6 @@ void CDirectInputJoyStick::Poll( HWND hWnd ){
 }
 
 void CDirectInputJoyStick::Clear(){
-	//int32_t
-#ifdef _SAIL_TARGET_PS3_
-	cellPadClearBuf(m_DeviceType);
-#endif
 }
 
 #ifndef _SAIL_MACHINTYPE_CONSOLE_

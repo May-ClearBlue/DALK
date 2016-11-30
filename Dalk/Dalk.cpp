@@ -1,4 +1,4 @@
-#include "MultiStdafx.h"
+ï»¿#include "MultiStdafx.h"
 #include "DALK.h"
 
 #if defined(_DALK_USE_DIRECT3D_)
@@ -73,16 +73,16 @@ LRESULT CALLBACK Dalk::MessageProc(HWND hWnd, UINT id, WPARAM wParam, LPARAM lPa
 #if defined(_DALK_USE_SQUIRREL_)
 void Dalk::InitSquirrel(int stackSize)
 {
-	// VM‚ğì¬
+	// VMã‚’ä½œæˆ
 	m_hSquirrel = sq_open(stackSize);
 
-	// •W€‚ÌƒGƒ‰[ƒnƒ“ƒhƒ‰‚ğİ’è
+	// æ¨™æº–ã®ã‚¨ãƒ©ãƒ¼ãƒãƒ³ãƒ‰ãƒ©ã‚’è¨­å®š
 	sqstd_seterrorhandlers(m_hSquirrel);
 
-	// •¶š—ño—ÍŠÖ”‚ğİ’è
+	// æ–‡å­—åˆ—å‡ºåŠ›é–¢æ•°ã‚’è¨­å®š
 	sq_setprintfunc(m_hSquirrel, printfunc, printfunc);
 
-	// •W€‚Åg‚¤VM‚Ìİ’è
+	// æ¨™æº–ã§ä½¿ã†VMã®è¨­å®š
 	Sqrat::DefaultVM::Set(m_hSquirrel);
 
 	_Bind_CWindow(m_hSquirrel);
@@ -91,7 +91,7 @@ void Dalk::InitSquirrel(int stackSize)
 void Dalk::RunSquirrel(_TCHAR fileName)
 {
 	Sqrat::Script _script(m_hSquirrel);
-	_script.CompileFile(_TEXT("D:\\Users\\‚Ü‚Ğ‚éB\\Desktop\\start.nut"));
+	_script.CompileFile(_TEXT("D:\\Users\\ã¾ã²ã‚‹ã€‚\\Desktop\\start.nut"));
 	_script.Run();
 }
 
@@ -100,11 +100,11 @@ void Dalk::RunSquirrel(_TCHAR fileName)
 DWORD Dalk::ShutDown()
 {
 #if defined(_DALK_USE_SQUIRREL_)
-	//Sqratƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒNƒ‰ƒX‚ª”jŠü‚³‚ê‚é‚Æ‚«Avm‚ğ—˜—p‚µ‚Ä‚¢‚é‚½‚ßAsq_close‚·‚é‘O‚ÉSqratƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒNƒ‰ƒX‚ğ”jŠü‚·‚é•K—v‚ª‚ ‚é
+	//Sqratãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ã‚¯ãƒ©ã‚¹ãŒç ´æ£„ã•ã‚Œã‚‹ã¨ãã€vmã‚’åˆ©ç”¨ã—ã¦ã„ã‚‹ãŸã‚ã€sq_closeã™ã‚‹å‰ã«Sqratãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®ã‚¯ãƒ©ã‚¹ã‚’ç ´æ£„ã™ã‚‹å¿…è¦ãŒã‚ã‚‹
 
 	//	script.Release();
 
-	// VM‚ğ‰ğ•ú
+	// VMã‚’è§£æ”¾
 	sq_close(m_hSquirrel);
 #endif
 
@@ -196,7 +196,7 @@ void Dalk::Run() {
 	MSG msg;
 	do{
 		if (::PeekMessage(&msg, NULL, 0, 0, PM_NOREMOVE)) {
-			if (!::GetMessage(&msg, NULL, 0, 0))/* ƒƒbƒZ[ƒWˆ— */
+			if (!::GetMessage(&msg, NULL, 0, 0))/* ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç† */
 				m_State = 1;
 
 			::TranslateMessage(&msg);
@@ -230,7 +230,7 @@ ADC.SetStream(&ADS);
 DWORD frame = ADS.GetSize() * 2;
 void* pBuf = malloc(frame);
 frame = ADC.Decode(pBuf, frame, frame);
-//		m_Font.DrawChar(L'Š™',0.0f, 0.0f)
+//		m_Font.DrawChar(L'éŒ',0.0f, 0.0f)
 m_Font.DrawChar(0x938c, 0.0f, 0.0f);
 #if 0
 m_Sprite.SetXYZ(925, 486, 100 + 18 + 36, 100 + 32 + 64);

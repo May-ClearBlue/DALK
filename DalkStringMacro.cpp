@@ -1,28 +1,5 @@
 ﻿#include "MultiStdafx.h"
 
-#ifdef _DALK_PS3_
-#pragma comment(lib,"target/ppu/lib/libadec_stub.a")
-#pragma comment(lib,"target/ppu/lib/libaudio_stub.a")
-#pragma comment(lib,"target/ppu/lib/libcgb.a")
-#pragma comment(lib,"target/ppu/lib/libdbgfont_gcm.a")
-#pragma comment(lib,"target/ppu/lib/libgcm_cmd.a")
-#pragma comment(lib,"target/ppu/lib/libgcm_sys_stub.a")
-#pragma comment(lib,"target/ppu/lib/libl10n_stub.a")
-#pragma comment(lib,"target/ppu/lib/libmixer.a")
-#pragma comment(lib,"target/ppu/lib/libmstreamSPURSAT3.a")
-#pragma comment(lib,"target/ppu/lib/libperf.a")
-#pragma comment(lib,"target/ppu/lib/libpngdec_stub.a")
-#pragma comment(lib,"target/ppu/lib/libresc_stub.a")
-#pragma comment(lib,"target/ppu/lib/librtc_stub.a")
-#pragma comment(lib,"target/ppu/lib/libspurs_jq_stub.a")
-#pragma comment(lib,"target/ppu/lib/libspurs_stub.a")
-#pragma comment(lib,"target/ppu/lib/libsync_stub.a")
-#pragma comment(lib,"target/ppu/lib/libsysmodule_stub.a")
-#pragma comment(lib,"target/ppu/lib/libsysutil_np_trophy_stub.a")
-#pragma comment(lib,"target/ppu/lib/libsysutil_stub.a")
-#pragma comment(lib,"target/ppu/lib/libusbd_stub.a")
-#endif
-
 #include "DalkStringMacro.h"
 
 using namespace DalkString;

@@ -5,9 +5,6 @@
 //Windowsで言うところのクリティカルセクション＝ミューテックス
 #if defined(_DALK_WINDOWS_)
 typedef CRITICAL_SECTION _MUTEX;
-#elif defined(_DALK_PS3_)
-#include <cell/sync/mutex.h>
-typedef CellSyncMutex  _MUTEX;
 #elif defined(_DALK_IOS_)
 #include <pthread.h>
 typedef pthread_mutex_t _MUTEX;

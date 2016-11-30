@@ -20,7 +20,6 @@
 #if defined(_DALK_WINDOWS_)
  typedef LONGLONG	long_t;		//32bit<->64bit対応用
 #else
-//PS3&VITA
 #include <ctype.h>
 typedef long		long_t;
 typedef long		LONG;

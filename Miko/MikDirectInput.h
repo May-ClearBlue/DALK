@@ -32,9 +32,6 @@ struct DIMOUSESTATE { BYTE buf[256]; };
 #define JOYSTICK_RANGE_MAX 1000
 #define JOYSTICK_RANGE_MIN -1000
 
-//PS3:CellPadInfo2のmax_connect
-#define _SIG_PAD_MAX_CONNECT_ 7
-
 //BOOL CALLBACK EnumAxesCallback(const DIDEVICEOBJECTINSTANCE* pdidoi,void *pContext);
 
 //-------------------------------インスタンス
@@ -68,17 +65,11 @@ public:
 		BYTE				m_KeyBuffer[256];
 		DIMOUSESTATE		m_MouseData;
 		DIJOYSTATE			m_JoyStickData;
-#ifdef _SAIL_TARGET_PS3_
-		CellPadData			m_PadData;
-#endif
 	};
 	union{
 		BYTE				m_LastKeyBuffer[256];
 		DIMOUSESTATE		m_LastMouseData;
 		DIJOYSTATE			m_LastJoyStickData;
-#ifdef _SAIL_TARGET_PS3_
-		CellPadData			m_LastPadData;
-#endif
 	};
 
 public:
@@ -129,7 +120,6 @@ inline	BYTE*	GetLasrAxisData()	{ return m_LastAxisData; }
 		void	GetCapabilities();
 		void	Poll(HWND hWnd = NULL);
 //inline	void	GetBufferData()					{ /*m_pDevice->GetDeviceData(DWORD cbObjectData,LPDIDEVICEOBJECTDATA rgdod, LPDWORD pdwInOut,DWORD dwFlags);*/ }
-//PS3
 		void	Clear();
 
 };
