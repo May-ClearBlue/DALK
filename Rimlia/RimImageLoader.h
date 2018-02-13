@@ -5,8 +5,9 @@
 
 #if defined(_DALK_WINDOWS_)
 #define _DALK_USE_PNG_
-#define _DALK_USE_DDS_
+//#define _DALK_USE_DDS_
 //#define _DALK_USE_TLG_
+#undef _DALK_USE_DDS_
 #endif
 
 #ifdef _DALK_USE_PNG_

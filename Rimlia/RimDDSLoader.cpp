@@ -1,5 +1,6 @@
 ﻿#include "MultiStdAfx.h"
 
+#if false
 #include "RimDDSLoader.h"
 
 #ifdef _DEBUG
@@ -136,3 +137,4 @@ int CGTFLoader::LoadData( ISurfaceInfo& rCGInfo, IDataStream* pData, int malloc_
 
 	return 0;
 }
+#endif

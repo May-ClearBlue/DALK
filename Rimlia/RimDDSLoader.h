@@ -1,6 +1,8 @@
 ﻿#ifndef _DDSLOADER_
 #define _DDSLOADER_
 
+#if false
+
 #include "RimCGLoader.h"
 
 #include "squish/squish.h"
@@ -97,5 +99,6 @@ public:
 	int LoadData	( ISurfaceInfo& rCGInfo, IDataStream* pData , int malloc_method = 0 );
 };
 
+#endif
 
 #endif
