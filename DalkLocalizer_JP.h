@@ -1,9 +1,9 @@
 ﻿#ifndef _DALK_LOCALIZER_JP_
 #define _DALK_LOCALIZER_JP_
 
-namespace DalkLocalizer {
+//namespace DalkLocalizer {
 
-inline std::wstring SJISToUTF16(std::string const& src)
+inline std::wstring SJISToWCHAR(std::string const& src)
 {
 	auto const dest_size = ::MultiByteToWideChar(CP_ACP, 0U, src.data(), -1, nullptr, 0U);
 
@@ -17,10 +17,10 @@ inline std::wstring SJISToUTF16(std::string const& src)
 	dest.resize(std::char_traits<wchar_t>::length(dest.data()));
 	dest.shrink_to_fit();
 
-	return std::wstring(dest.begin(), dest.end());
+	return wstring(dest.begin(), dest.end());
 }
 
-inline std::string UTF16ToSJIS(std::wstring const& src)
+inline std::string WCHARToSJIS(wstring const& src)
 {
 	auto const dest_size = ::WideCharToMultiByte(CP_ACP, 0U, src.data(), -1, nullptr, 0, nullptr, nullptr);
 
@@ -37,7 +37,7 @@ inline std::string UTF16ToSJIS(std::wstring const& src)
 	return std::string(dest.begin(), dest.end());
 }
 
-inline std::wstring UTF8ToUTF16(std::string const& src)
+inline wstring UTF8ToWCHAR(std::string const& src)
 {
 	auto const dest_size = ::MultiByteToWideChar(CP_UTF8, 0U, src.data(), -1, nullptr, 0U);
 
@@ -54,7 +54,7 @@ inline std::wstring UTF8ToUTF16(std::string const& src)
 	return std::wstring(dest.begin(), dest.end());
 }
 
-std::string UTF16ToUTF8(std::wstring const& src)
+inline std::string WCHARToUTF8(wstring const& src)
 {
 	auto const dest_size = ::WideCharToMultiByte(CP_UTF8, 0U, src.data(), -1, nullptr, 0, nullptr, nullptr);
 
@@ -69,63 +69,17 @@ std::string UTF16ToUTF8(std::wstring const& src)
 	dest.shrink_to_fit();
 
 	return std::string(dest.begin(), dest.end());
-
-#if 0
-	icu::UnicodeString src(value.c_str(), "utf8");
-    int length = src.extract(0, src.length(), NULL, "shift_jis");
-
-    std::vector<char> result(length + 1);
-    src.extract(0, src.length(), &result[0], "shift_jis");
-
-    return std::string(result.begin(), result.end() - 1);
-#endif
 }
 
-inline std::string SJIStoUTF8(const std::string& value) {
-	wstring const wide = SJISToUTF16(value);
-	return UTF16ToUTF8(wide);
-#if 0
-	icu::UnicodeString src(value.c_str(), "ibm-943_P15A-2003"/*"shift_jis"*/);
-    int length = src.extract(0, src.length(), NULL, "utf8");
-
-    std::vector<char> result(length + 1);
-    src.extract(0, src.length(), &result[0], "utf8");
-
-    return std::string(result.begin(), result.end() - 1);
-#endif
+inline std::string SJIStoUTF8(const std::string value) {
+	wstring const wide = SJISToWCHAR(value);
+	return WCHARToUTF8(wide);
 }
 
-inline std::string UTF8toSJIS(const std::string& value) {
-	wstring const wide = UTF8ToUTF16(value);
-	return UTF16ToSJIS(wide);
+inline std::string UTF8toSJIS(const std::string value) {
+	wstring const wide = UTF8ToWCHAR(value);
+	return WCHARToSJIS(wide);
 }
-
-#if 0
-inline string_t stringTostring_t(const std::string& value) {
-#ifdef _DALK_USE_UNICODE_
-    return babel::manual_translate<string, string_t>(value, babel::base_encoding::sjis, babel::base_encoding::utf16le);
-#else
-	return value;
-#endif
-
-#if 0
-	icu::UnicodeString src(value.c_str(), "ibm-943_P15A-2003"/*"shift_jis"*/);
-    int length = src.extract(0, src.length(), NULL, "utf16");
-
-    std::vector<wchar_t> result(length + 1);
-    src.extract(0, src.length(), &result[0], 0);
-
-    return std::wstring(result.begin(), result.end() - 1);
-#endif
-}
-inline string string_tTostring(const string_t& value) {
-#ifdef _DALK_USE_UNICODE_
-    return babel::manual_translate<string_t, string>(value, babel::base_encoding::utf16le, babel::base_encoding::sjis);
-    #else
-	return value;
-#endif
-}
-#endif
 
 //----------------------------------------------------------------------------
 // 文字処理(日本語対応)
@@ -252,6 +206,6 @@ inline const char* ToSJIS(char code){
 }
 
 
-}; //namespace DalkLocalizer
+//}; //namespace DalkLocalizer
 
 #endif

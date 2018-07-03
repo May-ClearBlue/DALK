@@ -157,10 +157,11 @@ inline WORD UTF32toUTF16(const DWORD Dest) {
 	    return 0xFFFF;
 }
 
+#if 0
 //http://yanchde.gozaru.jp/utf8_to_utf16/utf8_to_utf16_2.html
 //UTF8は１文字が可変サイズなのでポインタを受け取る（参照で自動的に進める。引数をシンプルにしたいので）
 
-inline WORD UTF8ToUTF16(char*& src, size_t src_size = 6) {
+inline WORD UTF8ToUTF16(char*& src, size_t src_size/* = 6*/) {
 //    const int nMaxReadSize = 6;
     int       iCh1;
     int       sizeBytes;
@@ -263,15 +264,6 @@ inline WORD UTF8ToUTF16(char*& src, size_t src_size = 6) {
 		src += sizeBytes;
 
 	return result;
-}
-
-#if 0
-inline string EncodefromString_t(string_t& str) {
-#ifdef _DALK_USE_UNICODE_
-	return babel::unicode_to_sjis(str);
-#else
-	return str;
-#endif
 }
 #endif
 

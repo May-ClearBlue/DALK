@@ -132,20 +132,21 @@ enum {
 #endif
 
 //16bitOSは基本的に（応用的にも）ライブラリサポート外
+/*
 #ifndef _WIN32_WINDOWS
 #define _WIN32_WINDOWS	0x0410	//Win98以降
 #endif
-
+*/
 #ifndef _WIN32_WINNT
-#define _WIN32_WINNT	0x0600	//WinVista以降
+#define _WIN32_WINNT	0x0601	//Win7以降
 #endif
-
+/*
 #ifndef _WIN32_IE
 #define _WIN32_IE		0x0900	//IE9以降
 #endif
-
+*/
 #ifndef WINVER
-#define WINVER			0x0600
+#define WINVER			0x0601	//Win7
 #endif
 
 #define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS

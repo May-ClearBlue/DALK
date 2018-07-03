@@ -85,8 +85,8 @@ CWindow::CWindow() :
 	m_Config.classname	= _T("Saya-System");
 	m_Config.style		= WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU;
 	m_Config.exstyle	= 0;
-	m_Config.width		= 800;
-	m_Config.height		= 600;
+	m_Config.width		= 1280;
+	m_Config.height		= 720;
 	m_Config.bCentering	= true;
 	m_Config.dialog		= NULL;
 }
