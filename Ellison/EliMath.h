@@ -13,8 +13,8 @@
 
 //Header
 #if defined(_USE_MATRIX_WITH_EIGEN_)
-#include <Eigen/Eigen/Core>
-#include <Eigen/Eigen/Geometry>
+#include <Eigen/Core>
+#include <Eigen/Geometry>
 #elif defined(_USE_MATRIX_WITH_BOOST_)
 #include <math.h>
 #include <boost/numeric/ublas/matrix.hpp> 

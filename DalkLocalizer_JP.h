@@ -1,40 +1,75 @@
 ﻿#ifndef _DALK_LOCALIZER_JP_
 #define _DALK_LOCALIZER_JP_
 
-#pragma warning(push)
-#pragma warning( disable : 4267 )
-#pragma message("--------------Use Library---------------")
-#pragma message("StringExchanger : Babel")
-#pragma message("---------------------------------------")
-//カスタマイズ：__BBL_DISABLE_UTF32__を定義しない
-//（UTF32はLinux系で使う（けどAndroidでwchar_t関連は使えないらしいので注意）
-#include <babel/babel.h>
-#pragma warning(pop)
-
-/*
-// エンコーディングの判別
-	babel::analyze_result result(babel::analyze_base_encoding(buffer));
-
-// エンコーディング名取得
-	string EncodingName = babel::profile_for_UI::get_base_encoding_name(result);
-	cout << "Engoding : " << EncodingName << endl;
-
-// エンコーディングを自動判別してUTF-16へ変換する
-	wstring UTF16String =  babel::auto_translate<wstring>(buffer, babel::base_encoding::utf16);
-
-// エンコーディングを自動判別してデフォルトのエンコーディング（WindowsならばShift-JIS）に変換する
-	string SjisString =  babel::auto_translate<>(buffer);
-*/
-
 namespace DalkLocalizer {
 
-inline void UseJapanese() {
-	babel::init_babel();
+inline std::wstring SJISToUTF16(std::string const& src)
+{
+	auto const dest_size = ::MultiByteToWideChar(CP_ACP, 0U, src.data(), -1, nullptr, 0U);
+
+	std::vector<wchar_t> dest(dest_size, L'\0');
+
+	if (::MultiByteToWideChar(CP_ACP, 0U, src.data(), -1, dest.data(), dest.size()) == 0)
+	{
+		throw std::system_error{ static_cast<int>(::GetLastError()), std::system_category() };
+	}
+
+	dest.resize(std::char_traits<wchar_t>::length(dest.data()));
+	dest.shrink_to_fit();
+
+	return std::wstring(dest.begin(), dest.end());
 }
 
-inline std::string UTF8toSJIS(const std::string& value) {
-	return babel::utf8_to_sjis(value);
-	
+inline std::string UTF16ToSJIS(std::wstring const& src)
+{
+	auto const dest_size = ::WideCharToMultiByte(CP_ACP, 0U, src.data(), -1, nullptr, 0, nullptr, nullptr);
+
+	std::vector<char> dest(dest_size, '\0');
+
+	if (::WideCharToMultiByte(CP_ACP, 0U, src.data(), -1, dest.data(), dest.size(), nullptr, nullptr) == 0)
+	{
+		throw std::system_error{ static_cast<int>(::GetLastError()), std::system_category() };
+	}
+
+	dest.resize(std::char_traits<char>::length(dest.data()));
+	dest.shrink_to_fit();
+
+	return std::string(dest.begin(), dest.end());
+}
+
+inline std::wstring UTF8ToUTF16(std::string const& src)
+{
+	auto const dest_size = ::MultiByteToWideChar(CP_UTF8, 0U, src.data(), -1, nullptr, 0U);
+
+	std::vector<wchar_t> dest(dest_size, L'\0');
+
+	if (::MultiByteToWideChar(CP_UTF8, 0U, src.data(), -1, dest.data(), dest.size()) == 0)
+	{
+		throw std::system_error{ static_cast<int>(::GetLastError()), std::system_category() };
+	}
+
+	dest.resize(std::char_traits<wchar_t>::length(dest.data()));
+	dest.shrink_to_fit();
+
+	return std::wstring(dest.begin(), dest.end());
+}
+
+std::string UTF16ToUTF8(std::wstring const& src)
+{
+	auto const dest_size = ::WideCharToMultiByte(CP_UTF8, 0U, src.data(), -1, nullptr, 0, nullptr, nullptr);
+
+	std::vector<char> dest(dest_size, '\0');
+
+	if (::WideCharToMultiByte(CP_UTF8, 0U, src.data(), -1, dest.data(), dest.size(), nullptr, nullptr) == 0)
+	{
+		throw std::system_error{ static_cast<int>(::GetLastError()), std::system_category() };
+	}
+
+	dest.resize(std::char_traits<char>::length(dest.data()));
+	dest.shrink_to_fit();
+
+	return std::string(dest.begin(), dest.end());
+
 #if 0
 	icu::UnicodeString src(value.c_str(), "utf8");
     int length = src.extract(0, src.length(), NULL, "shift_jis");
@@ -47,7 +82,8 @@ inline std::string UTF8toSJIS(const std::string& value) {
 }
 
 inline std::string SJIStoUTF8(const std::string& value) {
-	return babel::sjis_to_utf8(value);
+	wstring const wide = SJISToUTF16(value);
+	return UTF16ToUTF8(wide);
 #if 0
 	icu::UnicodeString src(value.c_str(), "ibm-943_P15A-2003"/*"shift_jis"*/);
     int length = src.extract(0, src.length(), NULL, "utf8");
@@ -57,6 +93,11 @@ inline std::string SJIStoUTF8(const std::string& value) {
 
     return std::string(result.begin(), result.end() - 1);
 #endif
+}
+
+inline std::string UTF8toSJIS(const std::string& value) {
+	wstring const wide = UTF8ToUTF16(value);
+	return UTF16ToSJIS(wide);
 }
 
 #if 0

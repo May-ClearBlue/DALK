@@ -3,7 +3,7 @@
 #include "RimOpusDecoder.h"
 
 #ifndef _DALK_USE_OPUSFILE_
-
+#if 0
 CVorbisDecoder::~CVorbisDecoder() {
  /* clean up and exit.  vorbis_info_clear() must be called last */
 	ogg_stream_clear(&os);
@@ -230,6 +230,8 @@ BOOL CVorbisDecoder::Decode(void* pDestBuffer,DWORD& DestSize,DWORD SrcSize){
 #else
 
 int COpusDecoder::SetDataStream(IDataStream* pStream){
+//Working
+#if 0
 	//Oggを開く
 	//srcfile = file;
 	//databeginoffset = file->GetOffset();
@@ -248,16 +250,17 @@ int COpusDecoder::SetDataStream(IDataStream* pStream){
 	while (1)
 	{
 		int i;
-		unsigned char pcm_bytes[MAX_FRAME_SIZE * m_DestFormat.nChannels * 2];
+		int bufferSize = MAX_FRAME_SIZE * m_DestFormat.nChannels * 2;
+		unsigned char* pcm_bytes = new unsigned char[bufferSize];
 
 		int frame_size;
 
 		/* Read a 16 bits/sample audio frame. */
 		fread(pcm_bytes, sizeof(short) * m_DestFormat.nChannels, FRAME_SIZE, m_InputBuffer);
-
+/*
 		if (feof(fin))
 			break;
-
+*/
 		int nbBytes;
 
 		/* Decode the data. In this example, frame_size will be constant because
@@ -285,14 +288,17 @@ int COpusDecoder::SetDataStream(IDataStream* pStream){
 	m_pDataStream = pStream;
 	//loading = TRUE;
 
-	SetPCMFormat(m_DestFormat,info->rate,16,info->channels);
-	SetPCMFormat(m_SourceFormat,info->rate,16,info->channels);
+	SetPCMFormat(m_DestFormat, info->rate,16,info->channels);
+	SetPCMFormat(m_SourceFormat, info->rate,16,info->channels);
 //	m_DataSize = (DWORD)ov_pcm_total(&vf, -1) * info->channels * 2;
 	m_TotalFrame = ov_pcm_total(&vf, -1);
+
+	delete[] pcm_bytes;
+#endif
 	return true;
 }
 
-size_t CVorbisDecoder::Decode(void* pDestBuffer,DWORD DestSize,DWORD SrcSize) {
+size_t COpusDecoder::Decode(void* pDestBuffer,DWORD DestSize,DWORD SrcSize) {
 	//DestSizeにはあらかじめ総データ量が入っていること
 	DWORD DecodedSize = 0;
 	char* pBufferPos = (char*)pDestBuffer;
@@ -400,4 +406,5 @@ bool COggFileReader::Seek(unsigned long sample)
 	return true;
 }
 */
+#endif
 #endif
